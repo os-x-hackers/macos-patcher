@@ -1,0 +1,3564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IncompatiblePaths</key>
+	<array>
+		<dict>
+			<key>Application Name</key>
+			<string>Sxs Memory Card Driver</string>
+			<key>Blurb</key>
+			<string>SxsDriverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;7197405&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.45049</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/com_sony_pci_MSAdapter.kext</string>
+				<string>/System/Library/Extensions/Sxs Memory Card.kext</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>10.5 Software Update</string>
+			<key>Blurb</key>
+			<string>10.5SoftwareUpdateBlurb</string>
+			<key>Comment</key>
+			<string>&lt;7191199&gt;</string>
+			<key>IgnoreOnUpdate</key>
+			<true/>
+			<key>Path</key>
+			<string>/System/InstallAtStartup</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SuperDrive Update 2.1</string>
+			<key>Blurb</key>
+			<string>SuperDriveBlurb</string>
+			<key>Comment</key>
+			<string>&lt;7184620&gt;</string>
+			<key>Path</key>
+			<string>/Applications/Utilities/SuperDrive Update 2.1.app</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Printer Software</string>
+			<key>Blurb</key>
+			<string>PrinterSoftwareBlurb</string>
+			<key>Comment</key>
+			<string>Meta product for missing printing software in the dock.</string>
+			<key>CustomSection</key>
+			<string>PrinterSoftwareSectionHeader</string>
+			<key>DeletedSoftware</key>
+			<true/>
+			<key>DontAddEntry</key>
+			<true/>
+			<key>Path</key>
+			<string>~/.MissingPrinterSoftware</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>McAfee VirusScan 8.6</string>
+			<key>Blurb</key>
+			<string>McAfeeBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6987133&gt;</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.mcafee.virusscan.VirusScanReporter.plist</string>
+				<string>/Library/LaunchDaemons/com.mcafee.virusscan.ScanManager.plist</string>
+				<string>/Library/LaunchDaemons/com.mcafee.virusscan.VShieldEPOInterface.plist</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>launch2net Drivers</string>
+			<key>Blurb</key>
+			<string>launch2netBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6985991&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.13.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/Option72.kext</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Line6 TonePort Driver</string>
+			<key>Blurb</key>
+			<string>Line6TonePortDriverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6985498&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.1.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/Line6Audio.kext</string>
+			<key>Read Me Group</key>
+			<string>Line6 TonePort Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Smith Micro Internet Cleanup</string>
+			<key>Blurb</key>
+			<string>SmithMicroInternetCleanupBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6916434&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.0.4 (634)</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/NetworkSpyAlert.kext</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.smithmicro.InternetCleanupAgent.plist</string>
+				<string>/Library/LaunchDaemons/com.smithmicro.internetcleanupd.plist</string>
+				<string>/System/Library/Extensions/NetworkSpyAlert.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Smith Micro Internet Cleanup</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>AJA Io HD Driver</string>
+			<key>Blurb</key>
+			<string>AJABlurb</string>
+			<key>Comment</key>
+			<string>&lt;6859590&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>6.0.3</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/AJAIoHD.kext</string>
+			<key>Read Me Group</key>
+			<string>AJA Io HD Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Norton AntiVirus</string>
+			<key>Blurb</key>
+			<string>NortonBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6658933&gt;</string>
+			<key>Path</key>
+			<string>/Library/LaunchDaemons/com.symantec.navapdaemon.plist</string>
+			<key>Read Me Group</key>
+			<string>Norton AntiVirus</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SRS iWOW</string>
+			<key>Blurb</key>
+			<string>iWowBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6697102&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^3[.]1([.]0([.]25[0-4])?)?$|^3[.]1[.]0[.]2[0-4][0-9]$|^3[.]1[.]0[.][0-1][0-9][0-9]$|^3[.]1[.]0[.][0-9][0-9]$|^3[.]1[.]0[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/iWow.plugin</string>
+			<key>Read Me Group</key>
+			<string>SRS iWOW</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;6697102&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.0.999</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/iWow.plugin</string>
+			<key>Read Me Group</key>
+			<string>SRS iWOW</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Parallels 2.5</string>
+			<key>Blurb</key>
+			<string>ParallelsBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6261980&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.5.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Parallels/Parallels Image Tool.app</string>
+				<string>/Applications/Parallels/Parallels Desktop.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Parallels 2.5</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;6261980, 6596673&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.5.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/StartupItems/Parallels/Pvsvnic.kext</string>
+				<string>/System/Library/Extensions/helper.kext</string>
+				<string>/System/Library/Extensions/vmmain.kext</string>
+				<string>/System/Library/Extensions/hypervisor.kext</string>
+				<string>/System/Library/Extensions/Pvsnet.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Parallels 2.5</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;6261980&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.5.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/ConnectUSB.kext</string>
+			<key>Read Me Group</key>
+			<string>Parallels 2.5</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sony Palm 6 Sync Driver</string>
+			<key>Blurb</key>
+			<string>SonyPalm6DriverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;6326005&gt;</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/SonyCLIEMSDriver.kext</string>
+			<key>Read Me Group</key>
+			<string>Sony Palm 6 Sync Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sony Palm 6 Sync Driver</string>
+			<key>Blurb</key>
+			<string>SonyPalm6DriverBlurb</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0.1</string>
+			<key>Path</key>
+			<string>/System/Library/SystemConfiguration/ApplicationEnhancer.bundle</string>
+			<key>Read Me Group</key>
+			<string>Sony Palm 6 Sync Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>AT&amp;T Laptop Connect Card</string>
+			<key>Blurb</key>
+			<string>AT&amp;TLaptopConnectCardBlurb</string>
+			<key>Comment</key>
+			<string>&lt;7048581&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.4</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/OptionMM.kext</string>
+			<key>Read Me Group</key>
+			<string>AT&amp;T Laptop Connect Card</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;7048581&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.10.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/OptionMSD.kext</string>
+			<key>Read Me Group</key>
+			<string>AT&amp;T Laptop Connect Card</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;7048581&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.5</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/OptionGTEdge.kext</string>
+			<key>Read Me Group</key>
+			<string>AT&amp;T Laptop Connect Card</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;7048581&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.10.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/OptionQC.kext</string>
+			<key>Read Me Group</key>
+			<string>AT&amp;T Laptop Connect Card</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Hear Plugin</string>
+			<key>Blurb</key>
+			<string>HearPluginBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9077941&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]0[.]5([.]49[0-7])?$|^1[.]0[.]5[.]4[0-8][0-9]$|^1[.]0[.]5[.][0-3][0-9][0-9]$|^1[.]0[.]5[.][0-9][0-9]$|^1[.]0[.]5[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/Hear.plugin</string>
+			<key>Read Me Group</key>
+			<string>Hear Plugin</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9077941&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.4</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/Hear.plugin</string>
+			<key>Read Me Group</key>
+			<string>Hear Plugin</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9077941&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.5</string>
+			<key>Path</key>
+			<string>/Applications/Hear.app</string>
+			<key>Read Me Group</key>
+			<string>Hear Plugin</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SugarSync</string>
+			<key>Blurb</key>
+			<string>SugarSyncBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9059150&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>~/Library/ScriptingAdditions/SugarSyncCMPlugInLoader.cocoa.osax</string>
+			<key>Read Me Group</key>
+			<string>SugarSync</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9059150&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.9</string>
+			<key>Path</key>
+			<string>/Applications/SugarSync Manager.app</string>
+			<key>Read Me Group</key>
+			<string>SugarSync</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>KasperskyAV</string>
+			<key>Blurb</key>
+			<string>KasperskyAVBlurb</string>
+			<key>Comment</key>
+			<string>&lt;12339780&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.2.0d16</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/klif.kext</string>
+			<key>Read Me Group</key>
+			<string>KasperskyAV</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Default Folder X</string>
+			<key>Blurb</key>
+			<string>DefaultFolderXBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9089210&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.3.10</string>
+			<key>Path</key>
+			<string>~/Library/ScriptingAdditions/Default Folder X Addition.osax</string>
+			<key>Read Me Group</key>
+			<string>Default Folder X</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9089210&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.3.10</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Default Folder X.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Default Folder X</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9089210&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.3.10</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Default Folder X.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Default Folder X</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>McAfee Security</string>
+			<key>Blurb</key>
+			<string>McAfeeSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9306866&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.0d1</string>
+			<key>Path</key>
+			<string>/usr/local/McAfee/AntiMalware/Extensions/Virex.kext</string>
+			<key>Read Me Group</key>
+			<string>McAfee Security</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9306866&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.0d1</string>
+			<key>Path</key>
+			<string>/usr/local/McAfee/AntiMalware/Extensions/Virex64.kext</string>
+			<key>Read Me Group</key>
+			<string>McAfee Security</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>VirusBarrier</string>
+			<key>Blurb</key>
+			<string>VirusBarrierBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9075323&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>10.6.12</string>
+			<key>Path</key>
+			<string>/Library/Intego/virusbarrier.bundle</string>
+			<key>Read Me Group</key>
+			<string>VirusBarrier</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sophos AntiVirus</string>
+			<key>Blurb</key>
+			<string>SophosAntiVirusBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9069027&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>7.2.0</string>
+			<key>Path</key>
+			<string>/Library/Sophos Anti-Virus/InterCheck.app</string>
+			<key>Read Me Group</key>
+			<string>Sophos AntiVirus</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SMS Widget</string>
+			<key>Blurb</key>
+			<string>SMSWidgetBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9071641&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.4</string>
+			<key>Path</key>
+			<string>~/Library/Widgets/SMS.wdgt</string>
+			<key>Read Me Group</key>
+			<string>SMS Widget</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>TotalFinder</string>
+			<key>Blurb</key>
+			<string>TotalFinderBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17181103&gt;&lt;17916313&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.6.2</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/TotalFinder.kext</string>
+				<string>/Library/ScriptingAdditions/TotalFinder.osax</string>
+				<string>/Applications/TotalFinder.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TotalFinder</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;17181103&gt;&lt;17916313&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>##VERSION##</string>
+			<key>MinimumBundleVersion</key>
+			<string>##VERSION##</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/TotalFinder.kext</string>
+				<string>/Library/ScriptingAdditions/TotalFinder.osax</string>
+				<string>/Applications/TotalFinder.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TotalFinder</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Visor</string>
+			<key>Blurb</key>
+			<string>VisorBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9077907&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>Custom</string>
+			<key>MinimumBundleVersion</key>
+			<string>Custom</string>
+			<key>Path</key>
+			<string>/Library/Application Support/SIMBL/Plugins/Visor.bundle</string>
+			<key>Read Me Group</key>
+			<string>Visor</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9077907&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>Custom</string>
+			<key>MinimumBundleVersion</key>
+			<string>Custom</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/SIMBL/Plugins/Visor.bundle</string>
+			<key>Read Me Group</key>
+			<string>Visor</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9077907&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.2</string>
+			<key>Path</key>
+			<string>/Library/Application Support/SIMBL/Plugins/Visor.bundle</string>
+			<key>Read Me Group</key>
+			<string>Visor</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9077907&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.2</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/SIMBL/Plugins/Visor.bundle</string>
+			<key>Read Me Group</key>
+			<string>Visor</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>CosmoPod</string>
+			<key>Blurb</key>
+			<string>CosmoPodBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9114349&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.5.1</string>
+			<key>Path</key>
+			<string>/Library/Application Support/SIMBL/Plugins/CosmoPod.bundle</string>
+			<key>Read Me Group</key>
+			<string>CosmoPod</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9114349&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.5.1</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/SIMBL/Plugins/CosmoPod.bundle</string>
+			<key>Read Me Group</key>
+			<string>CosmoPod</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>TabExpose</string>
+			<key>Blurb</key>
+			<string>TabExposeBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9234932&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.3</string>
+			<key>Path</key>
+			<string>/Library/Application Support/SIMBL/Plugins/TabExpose.bundle</string>
+			<key>Read Me Group</key>
+			<string>TabExpose</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9234932&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.3</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/SIMBL/Plugins/TabExpose.bundle</string>
+			<key>Read Me Group</key>
+			<string>TabExpose</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Videobox TAAVPlugin</string>
+			<key>Blurb</key>
+			<string>VideoboxTAAVPluginBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9124951&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.3T</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/SpiceRack/Spices/TastyAppsAVPlugin.bundle</string>
+			<key>Read Me Group</key>
+			<string>Videobox TAAVPlugin</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SecureVault LexarFilter</string>
+			<key>Blurb</key>
+			<string>SecureVaultLexarFilterBlurb</string>
+			<key>Comment</key>
+			<string>&lt;8830977&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.2.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/LexarFilterScheme.kext</string>
+			<key>Read Me Group</key>
+			<string>SecureVault LexarFilter</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Seagate Maxtor NotificationExec</string>
+			<key>Blurb</key>
+			<string>SeagateMaxtorNotificationExecBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9069003&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>NotificationExec version 4.1.6</string>
+			<key>Path</key>
+			<string>/Library/Driver Support/NotificationExec.app</string>
+			<key>Read Me Group</key>
+			<string>Seagate Maxtor NotificationExec</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9069003&gt;</string>
+			<key>Path</key>
+			<string>/Library/LaunchAgents/com.seagate.notificationexec.plist</string>
+			<key>Read Me Group</key>
+			<string>Seagate Maxtor NotificationExec</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>3D Weather Globe Screensaver</string>
+			<key>Blurb</key>
+			<string>3DWeatherGlobeScreensaverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9167403&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/Screen Savers/3D Weather Globe Deluxe Edition.saver</string>
+				<string>/Library/Screen Savers/3D Weather Globe 2.saver</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>3D Weather Globe Screensaver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Smith Micro Internet Cleanup</string>
+			<key>Blurb</key>
+			<string>SmithMicroInternetCleanupBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9131130&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.1.1 (1002)</string>
+			<key>Path</key>
+			<string>/Library/Smith Micro/Cleaning Common/smithmicropggd.app</string>
+			<key>Read Me Group</key>
+			<string>Smith Micro Internet Cleanup</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Switcher Maestro</string>
+			<key>Blurb</key>
+			<string>SwitcherMaestroBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9132083&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>/Applications/Switcher Maestro.app</string>
+			<key>Read Me Group</key>
+			<string>Switcher Maestro</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Pro Tools</string>
+			<key>Blurb</key>
+			<string>ProToolsBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9086711&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>9.0f121</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/Audio/MIDI Drivers/DigiDioMidiDriver.plugin</string>
+				<string>/Library/Audio/MIDI Drivers/DigidesignFireWireMIDI.plugin</string>
+				<string>/Library/Audio/MIDI Drivers/DigidesignMIDIIODriver.plugin</string>
+				<string>/Library/Audio/MIDI Drivers/DigidesignMbox2MIDI.plugin</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Pro Tools</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>AirDisplay</string>
+			<key>Blurb</key>
+			<string>AirDisplayBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11885184&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.6.3</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/AVFrameBuffer.kext</string>
+				<string>/System/Library/Extensions/AVVideoCard.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>AirDisplay</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>DisplayPad</string>
+			<key>Blurb</key>
+			<string>DisplayPadBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9575858&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/SSFramebuffer.kext</string>
+			<key>Read Me Group</key>
+			<string>DisplayPad</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9575858&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.4</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/DisplayPadDriver.kext</string>
+				<string>/System/Library/Extensions/DisplayPadFramebuffer.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>DisplayPad</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Antidote HD</string>
+			<key>Blurb</key>
+			<string>AntidoteHDBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9106224&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>7.2</string>
+			<key>Path</key>
+			<string>/Applications/Antidote HD.app</string>
+			<key>Read Me Group</key>
+			<string>Antidote HD</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Antidote HD</string>
+			<key>Blurb</key>
+			<string>AntidoteHDBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11778542&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.1.6</string>
+			<key>Path</key>
+			<string>/Library/Contextual Menu Items/Antidote - MC.plugin</string>
+			<key>Read Me Group</key>
+			<string>Antidote HD</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Antidote RX</string>
+			<key>Blurb</key>
+			<string>AntidoteRXBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9106224&gt;</string>
+			<key>Path</key>
+			<string>/Applications/Antidote RX.app</string>
+			<key>Read Me Group</key>
+			<string>Antidote RX</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>GlimmerBlocker</string>
+			<key>Blurb</key>
+			<string>GlimmerBlockerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9627191&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.4.12</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/GlimmerBlocker.prefPane</string>
+			<key>Read Me Group</key>
+			<string>GlimmerBlocker</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9627191&gt;</string>
+			<key>Path</key>
+			<string>/Library/LaunchDaemons/org.glimmerblocker.proxy.plist</string>
+			<key>Read Me Group</key>
+			<string>GlimmerBlocker</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Dropbox</string>
+			<key>Blurb</key>
+			<string>DropboxBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9326104&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.1.34</string>
+			<key>Path</key>
+			<string>/Applications/Dropbox.app</string>
+			<key>Read Me Group</key>
+			<string>Dropbox</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>CHUD</string>
+			<key>Blurb</key>
+			<string>CHUDBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9733963&gt;</string>
+			<key>Paths</key>
+			<array>
+				<string>/System/Library/Extensions/CHUDKernLib.kext</string>
+				<string>/System/Library/Extensions/CHUDProf.kext</string>
+				<string>/System/Library/Extensions/CHUDUtils.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>CHUD</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Camouflage</string>
+			<key>Blurb</key>
+			<string>CamouflageBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9734036&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0</string>
+			<key>Path</key>
+			<string>/Applications/Camouflage.app</string>
+			<key>Read Me Group</key>
+			<string>Camouflage</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>KinemeCore</string>
+			<key>Blurb</key>
+			<string>KinemeCoreBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9632516&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>0.5.1</string>
+			<key>Path</key>
+			<string>/Library/Graphics/Quartz Composer Patches/KinemeCore.plugin</string>
+			<key>Read Me Group</key>
+			<string>KinemeCore</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9632516&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>0.5.1</string>
+			<key>Path</key>
+			<string>~/Library/Graphics/Quartz Composer Patches/KinemeCore.plugin</string>
+			<key>Read Me Group</key>
+			<string>KinemeCore</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Avast!</string>
+			<key>Blurb</key>
+			<string>AvastBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9809247&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/PreferencePanes/Avast.prefPane</string>
+				<string>/Applications/avast!.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Avast!</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9809247&gt;</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/LaunchDaemons/com.avast.MacAvast.LaunchDaemon.plist</string>
+				<string>/Library/LaunchAgents/com.avast.MacAvast.LaunchAgent.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Avast!</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>DisplayLink</string>
+			<key>Blurb</key>
+			<string>DisplayLinkBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11656698&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>1.9</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/DisplayLinkDriver.kext</string>
+			<key>Read Me Group</key>
+			<string>DisplayLink</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Little Snitch</string>
+			<key>Blurb</key>
+			<string>LittleSnitchBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9810558&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.64</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/LittleSnitch.kext</string>
+			<key>Read Me Group</key>
+			<string>Little Snitch</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9810558&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>256</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Little Snitch.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Little Snitch</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>M-Audio Driver</string>
+			<key>Blurb</key>
+			<string>MAudioDriverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9810786&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.10.1</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/M-AudioFireWireBeBoB.kext</string>
+			<key>Read Me Group</key>
+			<string>M-Audio Driver</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;9810786&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.3.1</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/M-AudioFireWireDICE.kext</string>
+			<key>Read Me Group</key>
+			<string>M-Audio Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Parallels</string>
+			<key>Blurb</key>
+			<string>Parallels7Blurb</string>
+			<key>Comment</key>
+			<string>&lt;11756859&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>7.0.15094</string>
+			<key>Path</key>
+			<string>/Library/Parallels/Parallels Service.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.parallels.desktop.launch.plist</string>
+				<string>/Library/LaunchAgents/com.parallels.DesktopControlAgent.plist</string>
+				<string>/Library/LaunchAgents/com.parallels.vm.prl_pcproxy.plist</string>
+				<string>/Library/LaunchDaemons/com.parallels.desktop.launchdaemon.plist</string>
+				<string>/Library/Parallels/Parallels Service.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Parallels7</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SugarSync</string>
+			<key>Blurb</key>
+			<string>SugarSyncBlurb</string>
+			<key>Comment</key>
+			<string>&lt;10884134&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.9.26</string>
+			<key>Path</key>
+			<string>/Applications/SugarSync Manager.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/SugarSync/ShellExtensions.bundle</string>
+				<string>/Applications/SugarSync Manager.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>SugarSync</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Snapz Pro X</string>
+			<key>Blurb</key>
+			<string>SnapzProXBlurb</string>
+			<key>Comment</key>
+			<string>&lt;12134819&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.0.0</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/AmbrosiaAudioSupport.kext</string>
+			<key>Read Me Group</key>
+			<string>Snapz Pro X</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Plaxo</string>
+			<key>Blurb</key>
+			<string>PlaxoBlurb</string>
+			<key>Comment</key>
+			<string>&lt;10936962&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/ScriptingAdditions/PlaxoAB.osax</string>
+				<string>/Library/InputManagers/PlaxoABAddIn/PlaxoABAddIn.bundle</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Plaxo</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;10936962&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.16.2</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Plaxo/Plaxo Assistant.app</string>
+			<key>Read Me Group</key>
+			<string>Plaxo</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;10936962&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.0</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Plaxo.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Plaxo</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Transmit</string>
+			<key>Blurb</key>
+			<string>TransmitBlurb</string>
+			<key>Comment</key>
+			<string>&lt;10901422&gt;&lt;21244515&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.1.7</string>
+			<key>Path</key>
+			<string>/Applications/Transmit.app</string>
+			<key>Read Me Group</key>
+			<string>Transmit</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Rapport</string>
+			<key>Blurb</key>
+			<string>RapportBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11220582&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>/Library/Rapport/bin/RapportGUI.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.trusteer.rapport.rapportd.plist</string>
+				<string>/Library/Rapport/bin/rapportd</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Rapport</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Rapport</string>
+			<key>Blurb</key>
+			<string>RapportBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14281753&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0</string>
+			<key>Path</key>
+			<string>/Library/Rapport/bin/rapportd.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.trusteer.rapport.rapportd.plist</string>
+				<string>/Library/LaunchDaemons/com.trusteer.rooks.rooksd.plist</string>
+				<string>/Library/PreferencePanes/RapportPreferences.prefPane</string>
+				<string>/Library/Rapport</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Rapport</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Trusteer Endpoint Protection</string>
+			<key>Blurb</key>
+			<string>TrusteerEndpointProtectionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16972861&gt;&lt;19510185&gt;&lt;22370349&gt;&lt;23261553&gt;&lt;26844780&gt;&lt;27316525&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1609.22</string>
+			<key>Path</key>
+			<string>/Library/Rapport/bin/rapportd.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.trusteer.rapport.rapportd.plist</string>
+				<string>/Library/LaunchDaemons/com.trusteer.rooks.rooksd.plist</string>
+				<string>/Library/PreferencePanes/RapportPreferences.prefPane</string>
+				<string>/Library/Rapport/</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Trusteer Endpoint Protection</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Trend Smart Surfing</string>
+			<key>Blurb</key>
+			<string>TrendSmartSurfingBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11972504&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.6.1089</string>
+			<key>Path</key>
+			<string>/Applications/TrendMicro.localized/iTIS.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/StartupItems/iCoreService/iCoreService</string>
+				<string>/Library/StartupItems/iCoreService/StartupParameters.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Trend Smart Surfing</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Vodafone</string>
+			<key>Blurb</key>
+			<string>VodafoneBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11476282&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>v2.0.6</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/VodafoneFilter.kext</string>
+			<key>Read Me Group</key>
+			<string>Vodafone</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>VMWare Fusion</string>
+			<key>Blurb</key>
+			<string>VMWareFusionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11612923&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.1.4</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/Application Support/VMware Fusion/kexts/vmci.kext</string>
+				<string>/Library/Application Support/VMware Fusion/kexts/vmioplug.kext</string>
+				<string>/Library/Application Support/VMware Fusion/kexts/vmmon.kext</string>
+				<string>/Library/Application Support/VMware Fusion/kexts/vmnet.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>VMWare Fusion</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Canon UFRII</string>
+			<key>Blurb</key>
+			<string>CanonUFRIIBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11297129&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.25</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/Printers/Canon/UFR2/PDEs/AboutPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/AdvancedSettingsPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/BasicSettingsPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/FinishingPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/PaperSourcePDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/QualityPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/SecuredPDE.plugin</string>
+				<string>/Library/Printers/Canon/UFR2/PDEs/SpecialFeaturesPDE.plugin</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Canon UFRII</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Canon UFRII</string>
+			<key>Blurb</key>
+			<string>CanonUFRIIBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15207459&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>2.35</string>
+			<key>Path</key>
+			<string>/Library/Printers/Canon/UFR2/Utilities/UFR II BackGrounder.app</string>
+			<key>Read Me Group</key>
+			<string>Canon UFRII</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>3ivx</string>
+			<key>Blurb</key>
+			<string>3ivxBlurb</string>
+			<key>Comment</key>
+			<string>&lt;9854333&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>504</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/QuickTime/3ivxVideoCodec.component</string>
+				<string>/Library/QuickTime/3ivxMediaExporter.component</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>3ivx</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>LaCie USB 3.0 Driver</string>
+			<key>Blurb</key>
+			<string>LaCieUSB3DriverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11794142&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.8</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/PXHCD.kext</string>
+			<key>Read Me Group</key>
+			<string>LaCie USB 3.0 Driver</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Little Snitch</string>
+			<key>Blurb</key>
+			<string>LittleSnitchBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11981193&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>2.5.3</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/LittleSnitch.kext</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/System/Library/Extensions/LittleSnitch.kext</string>
+				<string>/Applications/Little Snitch Configuration.app</string>
+				<string>/Library/LaunchAgents/at.obdev.LittleSnitchNetworkMonitor.plist</string>
+				<string>/Library/LaunchAgents/at.obdev.LittleSnitchUIAgent.plist</string>
+				<string>/Library/LaunchDaemons/at.obdev.littlesnitchd.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Little Snitch</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Avast!</string>
+			<key>Blurb</key>
+			<string>AvastBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11980362&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.1</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Avast/fileshield/AvastFileShield.kext</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/Avast/fileshield/AvastFileShield.kext</string>
+				<string>/Applications/avast!.app</string>
+				<string>/Library/PreferencePanes/Avast.prefPane</string>
+				<string>/Library/LaunchAgents/com.avast.helper.plist</string>
+				<string>/Library/LaunchAgents/com.avast.install.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.account.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.daemon.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.fileshield.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.kexts.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.proxy.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.regapp.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Avast!</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sonnet Qio</string>
+			<key>Blurb</key>
+			<string>SonnetQioBlurb</string>
+			<key>Comment</key>
+			<string>&lt;11729092&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>2.7.1</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/STPCIFamily7.kext</string>
+			<key>Read Me Group</key>
+			<string>Sonnet Qio</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>TelldusCenter</string>
+			<key>Blurb</key>
+			<string>TelldusCenterBlurb</string>
+			<key>Comment</key>
+			<string>&lt;12350904&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>TelldusCenter 2.1.1</string>
+			<key>Path</key>
+			<string>/Applications/TelldusCenter.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Telldus/TelldusService</string>
+				<string>/Library/LaunchDaemons/com.telldus.service.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TelldusCenter</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>VMWare Fusion</string>
+			<key>Blurb</key>
+			<string>VMWareFusionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;13532135&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.1.1</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/VMware Fusion.app/Contents/Library/kexts/vmioplug.kext</string>
+				<string>/Applications/VMware Fusion.app/Contents/Library/kexts/vmmon.kext</string>
+				<string>/Applications/VMware Fusion.app/Contents/Library/kexts/vmnet.kext</string>
+				<string>/Applications/VMware Fusion.app/Contents/Library/kexts/VMwareVMCI.kext</string>
+				<string>/Applications/VMware Fusion.app/Contents/Library/kexts/vsockets.kext</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>VMWare Fusion</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Bark</string>
+			<key>Blurb</key>
+			<string>BarkBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14265562&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.1</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Bark/Bark.growlView</string>
+			<key>Read Me Group</key>
+			<string>Bark</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;14265562&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.1</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Bark/Bark Injection.bundle</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/Bark/mach_inject_bundle.framework</string>
+				<string>/Library/Application Support/Bark/us.pandamonia.Bark-Helper</string>
+				<string>/Library/Application Support/Bark/Bark Injection.bundle</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Bark</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>TotalSpaces</string>
+			<key>Blurb</key>
+			<string>TotalSpacesBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14155016&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.9</string>
+			<key>Path</key>
+			<string>/Applications/TotalSpaces.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/ScriptingAdditions/TotalSpaces.osax</string>
+				<string>/Applications/TotalSpaces.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TotalSpaces</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>DoubleCommand</string>
+			<key>Blurb</key>
+			<string>DoubleCommandBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14125508&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.6.9</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/StartupItems/DoubleCommand/DoubleCommand.kext</string>
+				<string>/Library/PreferencePanes/DoubleCommandPreferences.prefPane</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>DoubleCommand</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Best Youtube Downloader</string>
+			<key>Blurb</key>
+			<string>BestYoutubeDownloaderBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14582699&gt;</string>
+			<key>Path</key>
+			<string>~/Library/Application Support/Best Youtube Downloader/updater</string>
+			<key>Read Me Group</key>
+			<string>Best Youtube Downloader</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Flip4Mac</string>
+			<key>Blurb</key>
+			<string>Flip4MacBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14298879&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>3.0</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/QuickTime/Flip4Mac WMV Advanced.component</string>
+				<string>/Library/QuickTime/Flip4Mac WMV Export.component</string>
+				<string>/Library/QuickTime/Flip4Mac WMV Import.component</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Flip4Mac</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>DivX</string>
+			<key>Blurb</key>
+			<string>DivXBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14298730&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.3</string>
+			<key>Path</key>
+			<string>/Applications/DivX Converter.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/QuickTime/DivX Decoder.component</string>
+				<string>/Library/QuickTime/DivX Encoder.component</string>
+				<string>/Library/Application Support/DivX/QtPlugins/codecs/libqcncodecs.dylib</string>
+				<string>/Library/Application Support/DivX/QtPlugins/codecs/libqjpcodecs.dylib</string>
+				<string>/Library/Application Support/DivX/QtPlugins/codecs/libqkrcodecs.dylib</string>
+				<string>/Library/Application Support/DivX/QtPlugins/codecs/libqtwcodecs.dylib</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>DivX</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>ZEVO</string>
+			<key>Blurb</key>
+			<string>ZEVOBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14160671&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2012.09.14</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/ZFSDriver.kext</string>
+			<key>Read Me Group</key>
+			<string>ZEVO</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;14160671&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2012.09.23</string>
+			<key>Path</key>
+			<string>/System/Library/Extensions/ZFSFilesystem.kext</string>
+			<key>Read Me Group</key>
+			<string>ZEVO</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Kanbox</string>
+			<key>Blurb</key>
+			<string>KanboxBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14201977&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]1[.]2([.]10[0-1])?$|^1[.]1[.]2[.][0-9][0-9]$|^1[.]1[.]2[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Applications/Kanbox.app</string>
+			<key>Read Me Group</key>
+			<string>Kanbox</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;14201977&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.1.1</string>
+			<key>Path</key>
+			<string>/Applications/Kanbox.app</string>
+			<key>Read Me Group</key>
+			<string>Kanbox</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Belkin Router Monitor</string>
+			<key>Blurb</key>
+			<string>BelkinRouterMonitorBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14155901&gt;</string>
+			<key>Path</key>
+			<string>/Library/LaunchDaemons/com.Affinegy.InstaLANd.plist</string>
+			<key>Read Me Group</key>
+			<string>Belkin Router Monitor</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>WDDriveManager</string>
+			<key>Blurb</key>
+			<string>WDDriveManagerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15338085&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.2.7</string>
+			<key>Path</key>
+			<string>/Library/Application Support/WesternDigital/WDDriveManager/WDDriveManagerStatusMenu.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.wdc.drivemanagerstatusmenu.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.drivemanagerservice.plist</string>
+				<string>/Library/LaunchDaemons/com.westerndigital.WD-Drive-Manager-Installer.plist</string>
+				<string>/Library/Application Support/WesternDigital/WDDriveManager/WDDriveManagerService</string>
+				<string>/Library/Application Support/WesternDigital/WDDriveManager/WDDriveServicesBundle.bundle</string>
+				<string>/Library/Application Support/WesternDigital/WDDriveManager/WD RAID Manager.app</string>
+				<string>/Library/Application Support/WesternDigital/WDDriveManager/WDDriveManagerStatusMenu.app</string>
+				<string>/Library/Application Support/WDDriveManagerInstallerItems</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>WDDriveManager</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>WDSmartWare</string>
+			<key>Blurb</key>
+			<string>WDSmartWareBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15397384&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^(.*[^0-9])?2[.]2([.]0([.][0-5])?)?$</string>
+			<key>Path</key>
+			<string>/Library/Application Support/WDSmartWare/WDQuickView.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/WDSmartWare/WDDMServicesBundle.bundle</string>
+				<string>/Library/Application Support/WDSmartWare/SmartwareServerApp.app</string>
+				<string>/Library/Application Support/WDSmartWare/WDQuickViewPrefsPane.prefPane</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMService</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDSmartWareServer.plist</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDSmartWareServer.plist</string>
+				<string>/Library/PreferencePanes/WDQuickViewPrefsPane.prefPane</string>
+				<string>/Applications/WD SmartWare.app</string>
+				<string>/Library/Application Support/WDSmartWare/WDQuickView.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15397384&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.1.999</string>
+			<key>Path</key>
+			<string>/Library/Application Support/WDSmartWare/WDQuickView.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/WDSmartWare/WDDMServicesBundle.bundle</string>
+				<string>/Library/Application Support/WDSmartWare/SmartwareServerApp.app</string>
+				<string>/Library/Application Support/WDSmartWare/WDQuickViewPrefsPane.prefPane</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMService</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDSmartWareServer.plist</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDSmartWareServer.plist</string>
+				<string>/Library/PreferencePanes/WDQuickViewPrefsPane.prefPane</string>
+				<string>/Applications/WD SmartWare.app</string>
+				<string>/Library/Application Support/WDSmartWare/WDQuickView.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15338085&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^2[.]2([.]0([.][0-3])?)?$</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/WDQuickViewPrefsPane.prefPane</string>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15338085&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.1.999</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/WDQuickViewPrefsPane.prefPane</string>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15397384&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^(.*[^0-9])?1[.]1([.]0([.][0-3])?)?$</string>
+			<key>Path</key>
+			<string>/Library/Application Support/WDSmartWare/StatusMenu.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/WDSmartWare/Backup</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMServicesBundle.bundle</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMService</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.WesternDigital.WDSmartWareD.plist</string>
+				<string>/Applications/WD SmartWare.app</string>
+				<string>/Library/Application Support/WDSmartWare/StatusMenu.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15397384&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.999</string>
+			<key>Path</key>
+			<string>/Library/Application Support/WDSmartWare/StatusMenu.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/WDSmartWare/Backup</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMServicesBundle.bundle</string>
+				<string>/Library/Application Support/WDSmartWare/WDDMService</string>
+				<string>/Library/Application Support/WDSmartWare/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.wdc.WDDMservice.plist</string>
+				<string>/Library/LaunchDaemons/com.WesternDigital.WDSmartWareD.plist</string>
+				<string>/Applications/WD SmartWare.app</string>
+				<string>/Library/Application Support/WDSmartWare/StatusMenu.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>WDSmartWare</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>MyBook RAID Manager</string>
+			<key>Blurb</key>
+			<string>MyBookRAIDManagerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15397384&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.1</string>
+			<key>Path</key>
+			<string>/Applications/MyBook RAID Manager.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchDaemons/com.WD.WDDriveServices.plist</string>
+				<string>/Library/StartupItems/WDNotifier.app</string>
+				<string>/usr/bin/WDDrvSvc</string>
+				<string>/Applications/MyBook RAID Manager.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>MyBook RAID Manager</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Adobe Creative Cloud</string>
+			<key>Blurb</key>
+			<string>AdobeCreativeCloudBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15152196&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]0[.]500[.]17$</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app</string>
+				<string>/Applications/Adobe Creative Cloud Connection/Adobe Creative Cloud Connection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Adobe Creative Cloud</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Adobe Creative Cloud</string>
+			<key>Blurb</key>
+			<string>AdobeCreativeCloudBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15152196&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]1[.]0[.]567$</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app</string>
+				<string>/Applications/Adobe Creative Cloud Connection/Adobe Creative Cloud Connection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Adobe Creative Cloud</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Adobe Creative Cloud</string>
+			<key>Blurb</key>
+			<string>AdobeCreativeCloudBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15152196&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]1[.]0[.]571$</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app</string>
+				<string>/Applications/Adobe Creative Cloud Connection/Adobe Creative Cloud Connection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Adobe Creative Cloud</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Adobe Creative Cloud</string>
+			<key>Blurb</key>
+			<string>AdobeCreativeCloudBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15152196&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]1[.]0[.]578$</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app</string>
+				<string>/Applications/Adobe Creative Cloud Connection/Adobe Creative Cloud Connection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Adobe Creative Cloud</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Adobe Creative Cloud</string>
+			<key>Blurb</key>
+			<string>AdobeCreativeCloudBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15152196&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^1[.]1[.]0[.]592$</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/Utilities/Adobe Creative Cloud/CoreSync/Core Sync.app</string>
+				<string>/Applications/Adobe Creative Cloud Connection/Adobe Creative Cloud Connection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Adobe Creative Cloud</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Undercover</string>
+			<key>Blurb</key>
+			<string>UndercoverBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14697997&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>5.5</string>
+			<key>Path</key>
+			<string>/usr/local/uc/bin/uc.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchDaemons/com.orbicule.uc.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Undercover</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Genieo</string>
+			<key>Blurb</key>
+			<string>GenieoBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15881770&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2</string>
+			<key>Path</key>
+			<string>/Library/Frameworks/GenieoExtra.framework</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.genieoinnovation.macextension.plist</string>
+				<string>/Library/LaunchDaemons/com.genieoinnovation.macextension.client.plist</string>
+				<string>/Library/Frameworks/GenieoExtra.framework</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Genieo</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;14742059&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0</string>
+			<key>Path</key>
+			<string>/Applications/Genieo.app</string>
+			<key>Read Me Group</key>
+			<string>Genieo</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>FinderPop</string>
+			<key>Blurb</key>
+			<string>FinderPopBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14929001&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>2.4.9</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/FinderPop.prefPane</string>
+			<key>Read Me Group</key>
+			<string>FinderPop</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;14929001&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>2.4.9</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/PreferencePanes/FinderPop.prefPane</string>
+				<string>/Library/ScriptingAdditions/FinderPopOsax.osax</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>FinderPop</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Little Snitch</string>
+			<key>Blurb</key>
+			<string>LittleSnitchBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14959510&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>3.3</string>
+			<key>Path</key>
+			<string>/Library/Little Snitch/Little Snitch Agent.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/at.obdev.LittleSnitchUIAgent.plist</string>
+				<string>/Library/LaunchDaemons/at.obdev.littlesnitchd.plist</string>
+				<string>/Applications/Little Snitch Configuration.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Little Snitch</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Disk for iPhone</string>
+			<key>Blurb</key>
+			<string>DiskforiPhoneBlurb</string>
+			<key>Comment</key>
+			<string>&lt;14995697&gt;</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/LaunchAgents/org.thebends.iphonedisk.mobile_fs_util.plist</string>
+				<string>/Library/iphonedisk/mobile_fs_util</string>
+				<string>/Library/iphonedisk/iPhoneDisk.icns</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Disk for iPhone</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Asepsis</string>
+			<key>Blurb</key>
+			<string>AsepsisBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15283696&gt;</string>
+			<key>Paths</key>
+			<array>
+				<string>/Library/LaunchDaemons/com.binaryage.asepsis.daemon.plist</string>
+				<string>/System/Library/Extensions/Asepsis.kext</string>
+				<string>/Library/Application Support/Asepsis/asepsisd</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Asepsis</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Glims</string>
+			<key>Blurb</key>
+			<string>GlimsBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17158103&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.42</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Glims/PlugIns/Glims for Safari.plugin</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.machangout.glims.agent.plist</string>
+				<string>/Library/LaunchDaemons/com.machangout.glims.loader.plist</string>
+				<string>/Library/Application Support/Glims/Agent/Glims Agent.app</string>
+				<string>/Library/ScriptingAdditions/Glims.osax</string>
+				<string>/Library/Application Support/Glims/PlugIns/Glims for Safari.plugin</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Glims</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;18463924&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0b34</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Glims/PlugIns/Glims for Safari.plugin</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.machangout.glims.agent.plist</string>
+				<string>/Library/LaunchDaemons/com.machangout.glims.loader.plist</string>
+				<string>/Library/Application Support/Glims/Agent/Glims Agent.app</string>
+				<string>/Library/ScriptingAdditions/Glims.osax</string>
+				<string>/Library/Application Support/Glims/PlugIns/Glims for Safari.plugin</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Glims</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15294516&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>1.0.41</string>
+			<key>Path</key>
+			<string>/Library/Internet Plug-Ins/GlimsAdditions.webplugin</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.machangout.glims.agent.plist</string>
+				<string>/Library/LaunchDaemons/com.machangout.glims.loader.plist</string>
+				<string>/Library/Application Support/Glims/Agent/Glims Agent.app</string>
+				<string>/Library/ScriptingAdditions/Glims.osax</string>
+				<string>/Library/Internet Plug-Ins/GlimsAdditions.webplugin</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Glims</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Clusters</string>
+			<key>Blurb</key>
+			<string>ClustersBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15313454&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>1.7</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Clusters.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Clusters</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15313454&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>1.7</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Clusters.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Clusters</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>LazyMouse</string>
+			<key>Blurb</key>
+			<string>LazyMouseBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16103778&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.5</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/LazyMouse.prefPane</string>
+			<key>Read Me Group</key>
+			<string>LazyMouse</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>TorchUpdater</string>
+			<key>Blurb</key>
+			<string>TorchUpdaterBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16476647&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^25([.]0([.]0([.]439[0-8])?)?)?$|^25[.]0[.]0[.]43[0-8][0-9]$|^25[.]0[.]0[.]4[0-2][0-9][0-9]$|^25[.]0[.]0[.][0-3][0-9][0-9][0-9]$|^25[.]0[.]0[.][0-9][0-9][0-9]$|^25[.]0[.]0[.][0-9][0-9]$|^25[.]0[.]0[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Applications/Torch/Torch.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/usr/local/libexec/TorchUpdater</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TorchUpdater</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;16476647&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>24.999.999</string>
+			<key>Path</key>
+			<string>/Applications/Torch/Torch.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/usr/local/libexec/TorchUpdater</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>TorchUpdater</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Printopia</string>
+			<key>Blurb</key>
+			<string>PrintopiaBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16546368&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^2[.]1[.]10([.][0-1])?$</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Printopia.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Printopia</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;16546368&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.1.9</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Printopia.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Printopia</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;16546368&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^2[.]1[.]10([.][0-1])?$</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Printopia.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Printopia</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;16546368&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.1.9</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Printopia.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Printopia</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SophosAutoUpdate</string>
+			<key>Blurb</key>
+			<string>SophosAutoUpdateBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16464519&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>7.3.4</string>
+			<key>Path</key>
+			<string>/Library/Sophos Anti-Virus/SophosAutoUpdate.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchDaemons/com.sophos.autoupdate.plist</string>
+				<string>/Library/Sophos Anti-Virus/SophosAutoUpdate.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>SophosAutoUpdate</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QTDesktopVideoOut</string>
+			<key>Blurb</key>
+			<string>QTDesktopVideoOutBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15894515&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.7</string>
+			<key>Path</key>
+			<string>/Library/QuickTime/DesktopVideoOut.component</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/System/Library/QuickTime/DesktopVideoOut.component</string>
+				<string>/System/Library/Components/DesktopVideoOut.component</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>QTDesktopVideoOut</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;15894515&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.7</string>
+			<key>Path</key>
+			<string>~/Library/QuickTime/DesktopVideoOut.component</string>
+			<key>Read Me Group</key>
+			<string>QTDesktopVideoOut</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Qmaster Preference</string>
+			<key>Blurb</key>
+			<string>QmasterPreferenceBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16211998&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.5</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Apple Qmaster.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Qmaster Preference</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>iStat Menus</string>
+			<key>Blurb</key>
+			<string>iStatMenusBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17065521&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>4.20</string>
+			<key>Path</key>
+			<string>/Applications/iStat Menus.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.bjango.istatmenusagent.plist</string>
+				<string>/Library/LaunchAgents/com.bjango.istatlocal.plist</string>
+				<string>/Library/LaunchDaemons/com.bjango.istatmenusdaemon.plist</string>
+				<string>/Library/LaunchDaemons/com.bjango.istatlocaldaemon.plist</string>
+				<string>/Library/Application Support/iStat Menus 4/</string>
+				<string>/Library/Application Support/iStat local/</string>
+				<string>/Applications/iStat Menus.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>iStat Menus</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;17065521&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.9</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/iStat Menus.prefPane</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.bjango.istatlocal.plist</string>
+				<string>/Library/LaunchDaemons/com.bjango.istatlocaldaemon.plist</string>
+				<string>/Library/Application Support/iStat local/</string>
+				<string>/Library/PreferencePanes/iStat Menus.prefPane</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>iStat Menus</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;17065521&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.9</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/iStat Menus.prefPane</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>~/Library/LaunchAgents/com.bjango.istatlocal.plist</string>
+				<string>~/Library/PreferencePanes/iStat Menus.prefPane</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>iStat Menus</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>InstantOn</string>
+			<key>Blurb</key>
+			<string>InstantOnBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17202351&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>7.2.1</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/InstantOn.driver</string>
+			<key>Read Me Group</key>
+			<string>InstantOn</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>MoveMediaPlayer</string>
+			<key>Blurb</key>
+			<string>MoveMediaPlayerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16374131&gt;</string>
+			<key>Path</key>
+			<string>/Library/Internet Plug-Ins/Move-Media-Player.plugin</string>
+			<key>Read Me Group</key>
+			<string>MoveMediaPlayer</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;16374131&gt;</string>
+			<key>Path</key>
+			<string>~/Library/Internet Plug-Ins/Move-Media-Player.plugin</string>
+			<key>Read Me Group</key>
+			<string>MoveMediaPlayer</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>GPGMail</string>
+			<key>Blurb</key>
+			<string>GPGMailBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17121887&gt;&lt;22164961&gt;&lt;22727629&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.5.1</string>
+			<key>Path</key>
+			<string>/Library/Mail/Bundles/GPGMail.mailbundle</string>
+			<key>Read Me Group</key>
+			<string>GPGMail</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Billings Pro</string>
+			<key>Blurb</key>
+			<string>BillingsProBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16447062&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.6.5</string>
+			<key>Path</key>
+			<string>/Applications/Billings Pro.app</string>
+			<key>Read Me Group</key>
+			<string>Billings Pro</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sogou IM</string>
+			<key>Blurb</key>
+			<string>SogouIMBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17227832&gt;&lt;17989755&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.9.0</string>
+			<key>Path</key>
+			<string>/Library/Input Methods/SogouInput.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.sogou.SogouServices.plist</string>
+				<string>/Library/QuickLook/SogouSkinFileQuickLook.qlgenerator</string>
+				<string>/Library/Input Methods/SogouInput.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Sogou IM</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>1Password</string>
+			<key>Blurb</key>
+			<string>1PasswordBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17136128&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.12.1</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/1Password.app</string>
+				<string>/Library/InputManagers/1PasswdIM/1PasswdIM.bundle</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>1Password</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Wacom Tablet Preference</string>
+			<key>Blurb</key>
+			<string>WacomTabletPrefPaneBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15851253&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>Wacom v6.3.8-2</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/WacomTablet.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Wacom Tablet Preference</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Pen Tablet Preference</string>
+			<key>Blurb</key>
+			<string>PenTabletPrefPaneBlurb</string>
+			<key>Comment</key>
+			<string>&lt;15851253&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>PenTablet v5.3.3-3</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/PenTablet.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Pen Tablet Preference</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Trim Enabler</string>
+			<key>Blurb</key>
+			<string>TrimEnablerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17223672&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.2.4</string>
+			<key>Path</key>
+			<string>/Applications/Trim Enabler.app</string>
+			<key>Read Me Group</key>
+			<string>Trim Enabler</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SynergyKM</string>
+			<key>Blurb</key>
+			<string>SynergyKMBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17318614&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.1</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/SynergyKM.prefPane</string>
+			<key>Read Me Group</key>
+			<string>SynergyKM</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;17318614&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.1</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/SynergyKM.prefPane</string>
+			<key>Read Me Group</key>
+			<string>SynergyKM</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Macspoofer</string>
+			<key>Blurb</key>
+			<string>MacspooferBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17318653&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Macspoofer_v1.0.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Macspoofer</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;17318653&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Macspoofer_v1.0.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Macspoofer</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Google Japanese IM</string>
+			<key>Blurb</key>
+			<string>GoogleJapaneseIMBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17833867&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>1.13.1880</string>
+			<key>Path</key>
+			<string>/Library/Input Methods/GoogleJapaneseInput.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.google.inputmethod.Japanese.Converter.plist</string>
+				<string>/Library/LaunchAgents/com.google.inputmethod.Japanese.Renderer.plist</string>
+				<string>/Applications/GoogleJapaneseInput.localized/</string>
+				<string>/Library/Input Methods/GoogleJapaneseInput.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Google Japanese IM</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Final Cut Server Preference</string>
+			<key>Blurb</key>
+			<string>FinalCutServerPreferenceBlurb</string>
+			<key>Comment</key>
+			<string>&lt;16943785&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.5.2</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Final Cut Server.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Final Cut Server Preference</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>XtraFinder</string>
+			<key>Blurb</key>
+			<string>XtraFinderBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17468206&gt;&lt;18146508&gt;&lt;21307781&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>0.25.4</string>
+			<key>Paths</key>
+			<array>
+				<string>/Applications/XtraFinder.app</string>
+				<string>/Library/ScriptingAdditions/XtraFinder.osax</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>XtraFinder</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Parallels Access</string>
+			<key>Blurb</key>
+			<string>ParallelsAccessBlurb</string>
+			<key>Comment</key>
+			<string>&lt;17175312&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0.0</string>
+			<key>Path</key>
+			<string>/Applications/Parallels Access.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Input Methods/ParallelsIM.app</string>
+				<string>/Library/LaunchAgents/com.parallels.mobile.prl_deskctl_agent.launchagent.plist</string>
+				<string>/Library/LaunchDaemons/com.parallels.mobile.dispatcher.launchdaemon.plist</string>
+				<string>/Library/LaunchDaemons/com.parallels.mobile.kextloader.launchdaemon.plist</string>
+				<string>/Applications/Parallels Access.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Parallels Access</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Shake</string>
+			<key>Blurb</key>
+			<string>ShakeBlurb</string>
+			<key>Comment</key>
+			<string>&lt;18356650&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.10</string>
+			<key>Path</key>
+			<string>/Applications/Shake/shkv.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Applications/Shake/shake.app</string>
+				<string>/Applications/Shake/shkqtv.app</string>
+				<string>/Applications/Shake/shkv.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Shake</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Virtru</string>
+			<key>Blurb</key>
+			<string>VirtruBlurb</string>
+			<key>Comment</key>
+			<string>&lt;18693074&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0.2</string>
+			<key>Path</key>
+			<string>/Library/Mail/Bundles/Virtru.mailbundle</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.virtru.enable-bundles.plist</string>
+				<string>/Library/LaunchAgents/com.virtru.virtruxpc.xpc.plist</string>
+				<string>/Library/LaunchDaemons/com.virtru.patch-uuid.plist</string>
+				<string>/Library/Application Support/Virtru</string>
+				<string>/Library/Mail/Bundles/Virtru.mailbundle</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Virtru</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Litecoin Ticker</string>
+			<key>Blurb</key>
+			<string>LitecoinTickerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;18740164&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.337</string>
+			<key>Path</key>
+			<string>/Applications/Litecoin Ticker.app</string>
+			<key>Read Me Group</key>
+			<string>Litecoin Ticker</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>McAfee Internet Security</string>
+			<key>Blurb</key>
+			<string>McAfeeInternetSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;18701021&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>3.3</string>
+			<key>Path</key>
+			<string>/Applications/McAfee Internet Security.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.mcafee.menulet.plist</string>
+				<string>/Library/LaunchAgents/com.mcafee.reporter.plist</string>
+				<string>/Library/LaunchDaemons/com.mcafee.ssm.ScanFactory.plist</string>
+				<string>/Library/LaunchDaemons/com.mcafee.ssm.ScanManager.plist</string>
+				<string>/Library/LaunchDaemons/com.mcafee.virusscan.fmpd.plist</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>McAfee Internet Security</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Screen Sharing</string>
+			<key>Blurb</key>
+			<string>ScreenSharingBlurb</string>
+			<key>Comment</key>
+			<string>&lt;18731381&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.4</string>
+			<key>Path</key>
+			<string>/Applications/Screen Sharing.app</string>
+			<key>Read Me Group</key>
+			<string>Screen Sharing</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>eID</string>
+			<key>Blurb</key>
+			<string>eIDBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22279904&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.0.7</string>
+			<key>Path</key>
+			<string>/Applications/eID Viewer.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Belgium Identity Card/</string>
+				<string>/Applications/eID Viewer.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>eID</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>AJA</string>
+			<key>Blurb</key>
+			<string>AJA2Blurb</string>
+			<key>Comment</key>
+			<string>&lt;22280055&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.2.1</string>
+			<key>Path</key>
+			<string>/Applications/AJA Control Room.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Applications/AJA ControlPanel.app</string>
+				<string>/Applications/AJA Utilities/</string>
+				<string>/Library/Application Support/AJA/</string>
+				<string>/Library/Automator/KONA DPX To QT Translator.action</string>
+				<string>/Library/Automator/KONA QT To DPX Translator.action</string>
+				<string>/Library/CoreMediaIO/Plug-Ins/DAL/AJA.plugin</string>
+				<string>/Library/CoreMediaIO/Plug-Ins/FCP-DAL/AJA.plugin</string>
+				<string>/Library/Extensions/AJANTV2.kext</string>
+				<string>/Library/LaunchAgents/com.aja.ajaagent.plist</string>
+				<string>/Library/LaunchDaemons/com.aja.ajadaemon.plist</string>
+				<string>/Library/LaunchDaemons/com.aja.cmio.ajaassistant.plist</string>
+				<string>/Library/QuickTime/AJACodec.component</string>
+				<string>/Library/QuickTime/AJADigitizer.component</string>
+				<string>/Library/QuickTime/AJAMuxer.component</string>
+				<string>/Library/QuickTime/AJAUncompressedCodec.component</string>
+				<string>/Library/QuickTime/AJAVideoOutput.component</string>
+				<string>/Library/QuickTime/AJAVideoOutputClock.component</string>
+				<string>/Library/QuickTime/AJAVideoOutputCodec.component</string>
+				<string>/Applications/AJA Control Room.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>AJA</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Suitcase Fusion</string>
+			<key>Blurb</key>
+			<string>SuitcaseFusionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22280100&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>17.0.0</string>
+			<key>Path</key>
+			<string>/Applications/Suitcase Fusion 6.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Frameworks/ExtensisPlugins.framework</string>
+				<string>/Library/LaunchAgents/com.extensis.FMCore.plist</string>
+				<string>/Applications/Suitcase Fusion 6.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Suitcase Fusion</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>ADmitMac</string>
+			<key>Blurb</key>
+			<string>ADmitMacBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22280424&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>9.0.1</string>
+			<key>Path</key>
+			<string>/Applications/ADmitMac Browser.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Applications/Utilities/ADmitMac Network Utility.app</string>
+				<string>/Library/Application Support/ADmitMac/</string>
+				<string>/Library/DirectoryServices/PlugIns/CIFSPlugIn.dsplug</string>
+				<string>/Library/Filesystems/DAVE/</string>
+				<string>/Library/Frameworks/Thursby.framework</string>
+				<string>/Library/Frameworks/ThursbySecurity.framework</string>
+				<string>/Library/LaunchAgents/com.thursby.tss_check_cifs.plist</string>
+				<string>/Library/LaunchDaemons/com.thursby.cifsd.plist</string>
+				<string>/Library/LaunchDaemons/com.thursby.TSSRegistryStore.plist</string>
+				<string>/Library/PreferencePanes/ADmitMacPrinting.prefPane</string>
+				<string>/System/Library/Filesystems/DAVE/</string>
+				<string>/Applications/ADmitMac Browser.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>ADmitMac</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>DAVE</string>
+			<key>Blurb</key>
+			<string>DAVEBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22280484&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.0.1</string>
+			<key>Path</key>
+			<string>/Applications/DAVE Browser.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Applications/Utilities/DAVE Network Utility.app</string>
+				<string>/Library/Application Support/DAVE/</string>
+				<string>/Library/Filesystems/DAVE/</string>
+				<string>/Library/Frameworks/Thursby.framework</string>
+				<string>/Library/Frameworks/ThursbySecurity.framework</string>
+				<string>/Library/LaunchAgents/com.thursby.tss_check_cifs.plist</string>
+				<string>/Library/LaunchDaemons/com.thursby.cifsd.plist</string>
+				<string>/Library/PreferencePanes/DAVELogin.prefPane</string>
+				<string>/Library/PreferencePanes/DAVENetwork.prefPane</string>
+				<string>/Library/PreferencePanes/DAVEPrinting.prefPane</string>
+				<string>/Library/PreferencePanes/DAVESharing.prefPane</string>
+				<string>/Library/Scripts/DAVE Scripting.app</string>
+				<string>/System/Library/Filesystems/DAVE/</string>
+				<string>/Applications/DAVE Browser.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>DAVE</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Avid CoreAudio Plugin</string>
+			<key>Blurb</key>
+			<string>AvidCoreAudioPluginBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22362950&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^12[.]1([.]0([.]9[0-4])?)?$|^12[.]1[.]0[.][0-8][0-9]$|^12[.]1[.]0[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/Avid CoreAudio.plugin</string>
+			<key>Read Me Group</key>
+			<string>Avid CoreAudio Plugin</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;22362950&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.0.999</string>
+			<key>Path</key>
+			<string>/Library/Audio/Plug-Ins/HAL/Avid CoreAudio.plugin</string>
+			<key>Read Me Group</key>
+			<string>Avid CoreAudio Plugin</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Avast Mac Security</string>
+			<key>Blurb</key>
+			<string>AvastMacSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22354407&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>10.14</string>
+			<key>Path</key>
+			<string>/Applications/Avast.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Applications/AvastSecureLine.app</string>
+				<string>/Library/Application Support/Avast/</string>
+				<string>/Library/Application Support/AvastSecureLine/</string>
+				<string>/Library/LaunchAgents/com.avast.secureline.update-agent.plist</string>
+				<string>/Library/LaunchAgents/com.avast.secureline.userinit.plist</string>
+				<string>/Library/LaunchAgents/com.avast.update-agent.plist</string>
+				<string>/Library/LaunchAgents/com.avast.userinit.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.init.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.secureline.init.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.secureline.uninstall.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.secureline.update.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.uninstall.plist</string>
+				<string>/Library/LaunchDaemons/com.avast.update.plist</string>
+				<string>/Applications/Avast.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Avast Mac Security</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>LabTech Agent</string>
+			<key>Blurb</key>
+			<string>LabTechAgentBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>/usr/local/ltechagent/LTTray.app</string>
+			<key>Read Me Group</key>
+			<string>LabTech Agent</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Opswat Gears</string>
+			<key>Blurb</key>
+			<string>OpswatGearsBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>10.2.185</string>
+			<key>Path</key>
+			<string>/Applications/OPSWAT GEARS Client/OPSWAT GEARS.app</string>
+			<key>Read Me Group</key>
+			<string>Opswat Gears</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>iStat Server</string>
+			<key>Blurb</key>
+			<string>iStatServerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.21</string>
+			<key>Path</key>
+			<string>/Applications/iStat Server.app</string>
+			<key>Read Me Group</key>
+			<string>iStat Server</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>iStat Menus</string>
+			<key>Blurb</key>
+			<string>iStatMenusBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.10</string>
+			<key>Path</key>
+			<string>/Applications/iStat Menus.app</string>
+			<key>Read Me Group</key>
+			<string>iStat Menus</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Rubbernet</string>
+			<key>Blurb</key>
+			<string>RubbernetBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2</string>
+			<key>Path</key>
+			<string>/Applications/Rubbernet.app</string>
+			<key>Read Me Group</key>
+			<string>Rubbernet</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>App Tamer</string>
+			<key>Blurb</key>
+			<string>AppTamerBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.0.5</string>
+			<key>Path</key>
+			<string>/Applications/App Tamer.app</string>
+			<key>Read Me Group</key>
+			<string>App Tamer</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Magican</string>
+			<key>Blurb</key>
+			<string>MagicanBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.4.8</string>
+			<key>Path</key>
+			<string>/Applications/Magican.app</string>
+			<key>Read Me Group</key>
+			<string>Magican</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QQMacMgr</string>
+			<key>Blurb</key>
+			<string>QQMacMgrBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.4.0</string>
+			<key>Path</key>
+			<string>/Applications/QQMacMgr.app</string>
+			<key>Read Me Group</key>
+			<string>QQMacMgr</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Box Sync</string>
+			<key>Blurb</key>
+			<string>BoxSyncBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>4.0.6567</string>
+			<key>Path</key>
+			<string>/Applications/Box Sync.app</string>
+			<key>Read Me Group</key>
+			<string>Box Sync</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>ESET Cyber Security</string>
+			<key>Blurb</key>
+			<string>ESETCyberSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^6[.]0[.]14([.][0-3])?$</string>
+			<key>Path</key>
+			<string>/Applications/ESET Cyber Security.app</string>
+			<key>Read Me Group</key>
+			<string>ESET Cyber Security</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>ESET Cyber Security</string>
+			<key>Blurb</key>
+			<string>ESETCyberSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;22367019&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>6.0.13</string>
+			<key>Path</key>
+			<string>/Applications/ESET Cyber Security.app</string>
+			<key>Read Me Group</key>
+			<string>ESET Cyber Security</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Net Nanny</string>
+			<key>Blurb</key>
+			<string>NetNannyBlurb</string>
+			<key>Comment</key>
+			<string>&lt;23055175&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^3[.]1[.]7([.]0)?$</string>
+			<key>Path</key>
+			<string>/Applications/Net Nanny/Net Nanny.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/NARCPacketInterceptor.kext</string>
+				<string>/Library/Application Support/ContentWatch/</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.Agent.plist</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.Registration.plist</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.UpdaterAgent.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Daemon.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.LaunchProxy.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Updater.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Updater.WaitForIPC.plist</string>
+				<string>/Applications/Net Nanny/Net Nanny.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Net Nanny</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;23055175&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>3.1.6</string>
+			<key>Path</key>
+			<string>/Applications/Net Nanny/Net Nanny.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/NARCPacketInterceptor.kext</string>
+				<string>/Library/Application Support/ContentWatch/</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.Agent.plist</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.Registration.plist</string>
+				<string>/Library/LaunchAgents/com.contentwatch.ghoti.UpdaterAgent.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Daemon.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.LaunchProxy.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Updater.plist</string>
+				<string>/Library/LaunchDaemons/com.contentwatch.ghoti.Updater.WaitForIPC.plist</string>
+				<string>/Applications/Net Nanny/Net Nanny.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Net Nanny</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Gutenprint</string>
+			<key>Blurb</key>
+			<string>GutenprintBlurb</string>
+			<key>Comment</key>
+			<string>&lt;23929464&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.2.10</string>
+			<key>Path</key>
+			<string>/Library/Receipts/Gutenprint 5.pkg</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/usr/libexec/cups/driver/gutenprint.5.2</string>
+				<string>/Library/Receipts/Gutenprint 5.pkg</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Gutenprint</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Gutenprint</string>
+			<key>Blurb</key>
+			<string>GutenprintBlurb</string>
+			<key>Comment</key>
+			<string>&lt;28310943&gt;</string>
+			<key>Path</key>
+			<string>/usr/lib/libgutenprint.2.0.3.dylib</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/usr/libexec/cups/driver/gutenprint.5.2</string>
+				<string>/usr/lib/libgutenprint.2.0.3.dylib</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Gutenprint</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Symantec Endpoint Protection</string>
+			<key>Blurb</key>
+			<string>SymantecEndpointProtectionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;25704778&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^12([.]1([.]6465([.]6200)?)?)?$|^12[.]1[.]6465[.]6[0-1][0-9][0-9]$|^12[.]1[.]6465[.][0-5][0-9][0-9][0-9]$|^12[.]1[.]6465[.][0-9][0-9][0-9]$|^12[.]1[.]6465[.][0-9][0-9]$|^12[.]1[.]6465[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Applications/Symantec Solutions/Symantec Endpoint Protection.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Symantec Solutions/Symantec Endpoint Protection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Symantec Endpoint Protection</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;25704778&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.1.6464</string>
+			<key>Path</key>
+			<string>/Applications/Symantec Solutions/Symantec Endpoint Protection.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Symantec Solutions/Symantec Endpoint Protection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Symantec Endpoint Protection</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Symantec Endpoint Protection</string>
+			<key>Blurb</key>
+			<string>SymantecEndpointProtectionBlurb</string>
+			<key>Comment</key>
+			<string>&lt;25704778&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^12([.]1([.]6465([.]6200)?)?)?$|^12[.]1[.]6465[.]6[0-1][0-9][0-9]$|^12[.]1[.]6465[.][0-5][0-9][0-9][0-9]$|^12[.]1[.]6465[.][0-9][0-9][0-9]$|^12[.]1[.]6465[.][0-9][0-9]$|^12[.]1[.]6465[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Applications/Symantec Endpoint Protection.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Symantec Endpoint Protection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Symantec Endpoint Protection</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;25704778&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.1.6464</string>
+			<key>Path</key>
+			<string>/Applications/Symantec Endpoint Protection.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Symantec Endpoint Protection.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Symantec Endpoint Protection</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Norton Internet Security</string>
+			<key>Blurb</key>
+			<string>NortonInternetSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;26843886&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.9.1</string>
+			<key>Path</key>
+			<string>/Applications/Symantec Solutions/Norton Internet Security.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymAPComm.kext</string>
+				<string>/Library/Extensions/SymFirewall.kext</string>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/Extensions/SymIPS.kext</string>
+				<string>/Library/Extensions/SymPersonalFirewall.kext</string>
+				<string>/Library/Extensions/FileSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.errorreporter-periodicagent.plist</string>
+				<string>/Library/LaunchAgents/com.symantec.nis.application.plist</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.deepsight-extractor.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.errorreporter-periodic.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.liveupdate.daemon.ondemand.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.liveupdate.daemon.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.nav.migrateqtf.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.sharedsettings.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Symantec Solutions/Norton Internet Security.app</string>
+				<string>/Applications/Symantec Solutions/</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Norton Internet Security</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Norton Internet Security</string>
+			<key>Blurb</key>
+			<string>NortonInternetSecurityBlurb</string>
+			<key>Comment</key>
+			<string>&lt;26843886&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.9.1</string>
+			<key>Path</key>
+			<string>/Applications/Norton Internet Security.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Extensions/SymAPComm.kext</string>
+				<string>/Library/Extensions/SymFirewall.kext</string>
+				<string>/Library/Extensions/SymInternetSecurity.kext</string>
+				<string>/Library/Extensions/SymIPS.kext</string>
+				<string>/Library/Extensions/SymPersonalFirewall.kext</string>
+				<string>/Library/Extensions/FileSecurity.kext</string>
+				<string>/Library/LaunchAgents/com.symantec.errorreporter-periodicagent.plist</string>
+				<string>/Library/LaunchAgents/com.symantec.nis.application.plist</string>
+				<string>/Library/LaunchAgents/com.symantec.uiagent.application.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.deepsight-extractor.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.errorreporter-periodic.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.liveupdate.daemon.ondemand.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.liveupdate.daemon.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.nav.migrateqtf.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.sharedsettings.plist</string>
+				<string>/Library/LaunchDaemons/com.symantec.symdaemon.plist</string>
+				<string>/Applications/Norton Internet Security.app</string>
+				<string>/Applications/Symantec Solutions/</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Norton Internet Security</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>FortiClient</string>
+			<key>Blurb</key>
+			<string>FortiClientBlurb</string>
+			<key>Comment</key>
+			<string>&lt;26930248&gt;</string>
+			<key>BannedRegexMatchVersion</key>
+			<string>^5([.]4([.]0([.]493)?)?)?$|^5[.]4[.]0[.]49[0-2]$|^5[.]4[.]0[.]4[0-8][0-9]$|^5[.]4[.]0[.][0-3][0-9][0-9]$|^5[.]4[.]0[.][0-9][0-9]$|^5[.]4[.]0[.][0-9]$</string>
+			<key>Path</key>
+			<string>/Applications/FortiClient.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/Fortinet/FortiClient/</string>
+				<string>/Library/Internet Plug-Ins/FortiClient_SSLVPN_Plugin.bundle</string>
+				<string>/Library/LaunchAgents/com.fortinet.forticlient.fssoagent_launchagent.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.appfw.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.epctrl.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.fmon.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.fssoagent_launchdaemon.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.servctl.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.vpn.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.wf.plist</string>
+				<string>/Applications/FortiClient.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>FortiClient</string>
+		</dict>
+		<dict>
+			<key>Comment</key>
+			<string>&lt;26930248&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>5.3.9</string>
+			<key>Path</key>
+			<string>/Applications/FortiClient.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Application Support/Fortinet/FortiClient/</string>
+				<string>/Library/Internet Plug-Ins/FortiClient_SSLVPN_Plugin.bundle</string>
+				<string>/Library/LaunchAgents/com.fortinet.forticlient.fssoagent_launchagent.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.appfw.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.epctrl.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.fmon.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.fssoagent_launchdaemon.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.servctl.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.vpn.plist</string>
+				<string>/Library/LaunchDaemons/com.fortinet.forticlient.wf.plist</string>
+				<string>/Applications/FortiClient.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>FortiClient</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Growl</string>
+			<key>Blurb</key>
+			<string>GrowlBlurb</string>
+			<key>Comment</key>
+			<string>&lt;24841450&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.2</string>
+			<key>Path</key>
+			<string>/Library/PreferencePanes/Growl.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Growl</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Growl</string>
+			<key>Blurb</key>
+			<string>GrowlBlurb</string>
+			<key>Comment</key>
+			<string>&lt;24841450&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.2.2</string>
+			<key>Path</key>
+			<string>~/Library/PreferencePanes/Growl.prefPane</string>
+			<key>Read Me Group</key>
+			<string>Growl</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QQInput</string>
+			<key>Blurb</key>
+			<string>QQInputBlurb</string>
+			<key>Comment</key>
+			<string>&lt;24841450&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>2.8.999</string>
+			<key>Path</key>
+			<string>/Library/Input Methods/QQInput.app</string>
+			<key>Read Me Group</key>
+			<string>QQInput</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>KeyMagic</string>
+			<key>Blurb</key>
+			<string>KeyMagicBlurb</string>
+			<key>Comment</key>
+			<string>&lt;24841450&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.5</string>
+			<key>Path</key>
+			<string>/Library/Input Methods/KeyMagic.app</string>
+			<key>Read Me Group</key>
+			<string>KeyMagic</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Mou</string>
+			<key>Blurb</key>
+			<string>MouBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>0.8.7</string>
+			<key>Path</key>
+			<string>/Applications/Mou.app</string>
+			<key>Read Me Group</key>
+			<string>Mou</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Razer Mamba 2012</string>
+			<key>Blurb</key>
+			<string>RazerMamba2012Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.01</string>
+			<key>Path</key>
+			<string>/Applications/Razer Mamba 2012.app</string>
+			<key>Read Me Group</key>
+			<string>Razer Mamba 2012</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Razer Mamba 2012</string>
+			<key>Blurb</key>
+			<string>RazerMamba2012Blurb</string>
+			<key>Comment</key>
+			<string>&lt;24841450&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.07</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Razer/RzCoreEngine.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/LaunchAgents/com.razer.common.rzcoreengine.plist</string>
+				<string>/Library/LaunchAgents/com.razer.mambaIIdaemon.plist</string>
+				<string>/Library/Application Support/Razer/RzCoreEngine.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Razer Mamba 2012</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2015</string>
+			<key>Blurb</key>
+			<string>QuickBooks2015Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27853160&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>16.0.6</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2015.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2015</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2014</string>
+			<key>Blurb</key>
+			<string>QuickBooks2014Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>15.0f2630</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2014.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2014</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2013</string>
+			<key>Blurb</key>
+			<string>QuickBooks2013Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>14.0f10166</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2013.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2013</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2012</string>
+			<key>Blurb</key>
+			<string>QuickBooks2012Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>13.0.f7630</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2012.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2012</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2011</string>
+			<key>Blurb</key>
+			<string>QuickBooks2011Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>12.0f5460</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2011.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2011</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2010</string>
+			<key>Blurb</key>
+			<string>QuickBooks2010Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>11.0f2972</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2010.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2010</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>QuickBooks 2009</string>
+			<key>Blurb</key>
+			<string>QuickBooks2009Blurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>10.0f2440</string>
+			<key>Path</key>
+			<string>/Applications/QuickBooks 2009.app</string>
+			<key>Read Me Group</key>
+			<string>QuickBooks 2009</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Quicken Essentials</string>
+			<key>Blurb</key>
+			<string>QuickenEssentialsBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.7.4</string>
+			<key>Path</key>
+			<string>/Applications/Quicken Essentials.app</string>
+			<key>Read Me Group</key>
+			<string>Quicken Essentials</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>SourceTree</string>
+			<key>Blurb</key>
+			<string>SourceTreeBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27479144&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.5.6</string>
+			<key>Path</key>
+			<string>/Applications/SourceTree.app</string>
+			<key>Read Me Group</key>
+			<string>SourceTree</string>
+			<key>WarningOnly</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sophos Home</string>
+			<key>Blurb</key>
+			<string>SophosAutoUpdateBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27193836&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>9.4.4</string>
+			<key>Path</key>
+			<string>/Applications/Sophos Home.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Sophos Anti-Virus/SophosAutoUpdate.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Sophos Home</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sophos Endpoint</string>
+			<key>Blurb</key>
+			<string>SophosEndpointBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27193836&gt;</string>
+			<key>MinimumBundleVersion</key>
+			<string>9.4.4</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>9.5.2</string>
+			<key>Path</key>
+			<string>/Applications/Sophos Anti-Virus.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Sophos Anti-Virus/SophosAutoUpdate.app</string>
+				<string>/Library/Extensions/SophosFileProtection.kext</string>
+				<string>/Library/Extensions/SophosPortInterceptor.kext</string>
+				<string>/Library/Extensions/SophosWebProtection.kext</string>
+				<string>/Library/LaunchAgents/com.sophos.uiserver.plist</string>
+				<string>/Library/LaunchDaemons/com.sophos.common.servicemanager.plist</string>
+				<string>/Library/Sophos Anti-Virus/</string>
+				<string>/Applications/Sophos Anti-Virus.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Sophos Endpoint</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Sophos AV</string>
+			<key>Blurb</key>
+			<string>SophosAVBlurb</string>
+			<key>Comment</key>
+			<string>&lt;27193836&gt;</string>
+			<key>MinimumCompatibleVersion</key>
+			<string>9.4.4</string>
+			<key>Path</key>
+			<string>/Applications/Sophos Anti-Virus.app</string>
+			<key>DependentPaths</key>
+			<array>
+				<string>/Library/Sophos Anti-Virus/SophosAutoUpdate.app</string>
+				<string>/Library/Extensions/SophosNetworkInterceptor.kext</string>
+				<string>/Library/Extensions/SophosOnAccessInterceptor.kext</string>
+				<string>/Library/LaunchAgents/com.sophos.uiserver.plist</string>
+				<string>/Library/LaunchDaemons/com.sophos.common.servicemanager.plist</string>
+				<string>/Library/Sophos Anti-Virus/</string>
+				<string>/Applications/Sophos Anti-Virus.app</string>
+			</array>
+			<key>Read Me Group</key>
+			<string>Sophos AV</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>FastCut Threshold Plugin</string>
+			<key>Blurb</key>
+			<string>FastCutThresholdPluginBlurb</string>
+			<key>Comment</key>
+			<string>&lt;28017642&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.0</string>
+			<key>Path</key>
+			<string>/Library/Graphics/Image Units/FCThresholdFilter.plugin</string>
+			<key>Read Me Group</key>
+			<string>FastCut Threshold Plugin</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>Apple Configurator</string>
+			<key>Blurb</key>
+			<string>AppleConfiguratorBlurb</string>
+			<key>Comment</key>
+			<string>&lt;31036526&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>1.9.9</string>
+			<key>Path</key>
+			<string>/Applications/Apple Configurator.app</string>
+			<key>Read Me Group</key>
+			<string>Apple Configurator</string>
+		</dict>
+		<dict>
+			<key>Application Name</key>
+			<string>WebEx Outlook Plugin</string>
+			<key>Blurb</key>
+			<string>WebExOutlookPluginBlurb</string>
+			<key>Comment</key>
+			<string>&lt;33041806&gt;</string>
+			<key>MaximumBundleVersion</key>
+			<string>32.4.0</string>
+			<key>Path</key>
+			<string>/Library/Application Support/Microsoft/WebExPlugin/WebExOutlookPlugin.bundle</string>
+			<key>Read Me Group</key>
+			<string>WebEx Outlook Plugin</string>
+		</dict>
+	</array>
+	<key>IncompatibleSoftwareListVersion</key>
+	<string>10.13.160</string>
+</dict>
+</plist>

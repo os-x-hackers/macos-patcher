@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSInterstitialLevel1</key>
+	<array>
+		<string>Tražim…</string>
+		<string>Pričekajte dok pogledam…</string>
+		<string>Radim na tome</string>
+		<string>Provjeravam</string>
+		<string>Pričekajte</string>
+		<string>Hmm…</string>
+		<string>Pričekajte trenutak</string>
+		<string>Samo sekundu</string>
+		<string>Sekunda</string>
+	</array>
+	<key>CSInterstitialLevel2&amp;3</key>
+	<array>
+		<string>Razmišljam…</string>
+		<string>I dalje pokušavam…</string>
+		<string>Samo trenutak…</string>
+	</array>
+	<key>CSInterstitialLevel4</key>
+	<array>
+		<string>Žao mi je, čini se da imam problema sa spajanjem</string>
+	</array>
+</dict>
+</plist>

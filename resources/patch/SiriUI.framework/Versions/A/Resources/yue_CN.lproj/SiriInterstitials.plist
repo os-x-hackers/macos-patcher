@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSInterstitialLevel4</key>
+	<array>
+		<string>唔好意思，连接有问题</string>
+	</array>
+	<key>CSInterstitialLevel2&amp;3</key>
+	<array>
+		<string>分析紧…</string>
+		<string>睇紧…</string>
+		<string>请等一阵…</string>
+	</array>
+	<key>CSInterstitialLevel1</key>
+	<array>
+		<string>查紧…</string>
+		<string>睇下先…</string>
+		<string>等一阵</string>
+		<string>请等一阵</string>
+		<string>等等</string>
+		<string>嗯…</string>
+		<string>等一等</string>
+		<string>好快</string>
+		<string>嚟紧</string>
+	</array>
+</dict>
+</plist>
