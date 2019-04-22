@@ -365,6 +365,8 @@ Restart()
 		reboot
 	else
 		echo ${text_message}"/ Thank you for using macOS Patcher."${erase_style}
+		Input_On
+		exit
 	fi
 
 }
