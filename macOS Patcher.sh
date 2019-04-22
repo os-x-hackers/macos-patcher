@@ -304,7 +304,7 @@ Create_Installer()
 
 	echo ${text_progress}"> Unmounting installer disk images."${erase_style}
 	Output_Off hdiutil detach "$installer_packages_image"
-	Output_Off hdiutil detach "$installer_images_path"
+	Output_Off hdiutil detach "$installer_system_image"
 	echo ${move_up}${erase_line}${text_success}"+ Unmounted installer disk images."${erase_style}
 }
 
