@@ -508,6 +508,22 @@ Restore_Volume()
 	if [[ $volume_version_short == "10.14" ]]; then
 		rm "$volume_path"/usr/bin/transutil
 	fi
+
+	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
+		rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
+	fi
+	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
+		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
+	fi
+	if [[ -d "$volume_path"/usr/sudagent ]]; then
+		rm -R "$volume_path"/usr/sudagent
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudcheck ]]; then
+		rm "$volume_path"/usr/bin/sudcheck
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudutil ]]; then
+		rm "$volume_path"/usr/bin/sudutil
+	fi
 	echo ${move_up}${erase_line}${text_success}"+ Removed patcher utilities."${erase_style}
 }
 
