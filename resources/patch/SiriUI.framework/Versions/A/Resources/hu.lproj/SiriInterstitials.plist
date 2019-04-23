@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSInterstitialLevel1</key>
+	<array>
+		<string>Keresem…</string>
+		<string>Lássuk…</string>
+		<string>Intézem</string>
+		<string>Rajta vagyok</string>
+		<string>Kis türelmet</string>
+		<string>Hmm…</string>
+		<string>Egy pillanat</string>
+		<string>Mindjárt</string>
+		<string>Pillanat</string>
+	</array>
+	<key>CSInterstitialLevel2&amp;3</key>
+	<array>
+		<string>Gondolkodom…</string>
+		<string>Még dolgozom rajta…</string>
+		<string>Egy pillanat…</string>
+	</array>
+	<key>CSInterstitialLevel4</key>
+	<array>
+		<string>Elnézést, de úgy tűnik, problémát észleltem a kapcsolatban</string>
+	</array>
+</dict>
+</plist>

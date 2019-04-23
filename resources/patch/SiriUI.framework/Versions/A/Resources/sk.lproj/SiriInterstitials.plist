@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSInterstitialLevel1</key>
+	<array>
+		<string>Hľadám...</string>
+		<string>Pozriem sa na to...</string>
+		<string>Idem na to</string>
+		<string>Mám to</string>
+		<string>Vydržte</string>
+		<string>Hmm...</string>
+		<string>Moment</string>
+		<string>Sekundu</string>
+		<string>Chvíľočku</string>
+	</array>
+	<key>CSInterstitialLevel2&amp;3</key>
+	<array>
+		<string>Premýšľam...</string>
+		<string>Stále to skúšam...</string>
+		<string>Dajte mi chvíľu...</string>
+	</array>
+	<key>CSInterstitialLevel4</key>
+	<array>
+		<string>Ospravedlňujem sa, zdá sa, že mám problémy s pripojením</string>
+	</array>
+</dict>
+</plist>

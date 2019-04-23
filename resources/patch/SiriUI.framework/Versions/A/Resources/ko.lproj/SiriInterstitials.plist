@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CSInterstitialLevel1</key>
+	<array>
+		<string>살펴보는 중...</string>
+		<string>살펴보겠습니다...</string>
+		<string>하고 있습니다.</string>
+		<string>하는 중</string>
+		<string>보류 중</string>
+		<string>흠...</string>
+		<string>잠시만 기다리십시오.</string>
+		<string>잠시만요.</string>
+		<string>잠깐만요.</string>
+	</array>
+	<key>CSInterstitialLevel2&amp;3</key>
+	<array>
+		<string>생각 중...</string>
+		<string>계속 시도 중...</string>
+		<string>잠시만 기다리십시오...</string>
+	</array>
+	<key>CSInterstitialLevel4</key>
+	<array>
+		<string>죄송합니다. 연결에 문제가 있는 것 같습니다.</string>
+	</array>
+</dict>
+</plist>
