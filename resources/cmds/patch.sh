@@ -377,7 +377,7 @@ Patch_Volume()
 		cp -R "$resources_path"/NVDAResmanTesla.kext "$volume_path"/System/Library/Extensions
 	fi
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14.5" ]]; then
 		Output_Off rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 		Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		Output_Off rm -R "$volume_path"/System/Library/Frameworks/OpenGL.framework
