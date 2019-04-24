@@ -108,9 +108,9 @@ Check_Internet()
 {
 	echo ${text_progress}"> Checking for internet conectivity."${erase_style}
 	if [[ $(ping -c 5 www.google.com) == *transmitted* && $(ping -c 5 www.google.com) == *received* ]]; then
-		echo ${move_up}${erase_line}${text_success}"+ Integrity conectivity check passed."${erase_style}
+		echo ${move_up}${erase_line}${text_success}"+ Internet conectivity check passed."${erase_style}
 	else
-		echo ${text_error}"- Integrity conectivity check failed."${erase_style}
+		echo ${text_error}"- Internet conectivity check failed."${erase_style}
 		echo ${text_message}"/ Run this tool while connected to the internet."${erase_style}
 		Input_On
 		exit
