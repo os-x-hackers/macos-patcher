@@ -203,7 +203,7 @@ Input_Volume()
 Check_Volume_Version()
 {
 	echo ${text_progress}"> Checking system version."${erase_style}	
-	volume_version="{$(grep -A1 "ProductVersion" "$volume_path/$system_version_path")"
+	volume_version="$(grep -A1 "ProductVersion" "$volume_path/$system_version_path")"
 
 	volume_version="${volume_version#*<string>}"
 	volume_version="${volume_version%</string>*}"
