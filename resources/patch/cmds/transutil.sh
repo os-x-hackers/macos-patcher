@@ -368,7 +368,6 @@ Restart()
 		Input_On
 		exit
 	fi
-
 }
 
 Input_Off
