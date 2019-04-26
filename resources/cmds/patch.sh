@@ -736,14 +736,22 @@ Input_Operation_APFS()
 Patch_APFS()
 {
 	echo ${text_progress}"> Installing APFS system patch."${erase_style}
+	volume_uuid="$(diskutil info "$volume_name"|grep "Volume UUID")"
+	volume_uuid="${volume_uuid:30:38}"
+
 	if [[ ! -d /Volumes/EFI/EFI/BOOT ]]; then
 		mkdir /Volumes/EFI/EFI/BOOT
 	fi
 
+	cp "$resources_path"/startup.nsh /Volumes/EFI/EFI/BOOT
 	cp "$resources_path"/BOOTX64.efi /Volumes/EFI/EFI/BOOT
 	cp "$volume_path"/usr/standalone/i386/apfs.efi /Volumes/EFI/EFI
 
-	cp -R "$resources_path"/APFS\ Boot\ Selector.prefPane "$volume_path"/Library/PreferencePanes
+	if [[ -d "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane ]]; then
+		rm -R "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane
+	fi
+
+	sed -i '' "s/volume_uuid/$volume_uuid/g" /Volumes/EFI/EFI/BOOT/startup.nsh
 
 	if [[ $(diskutil info "$volume_name"|grep "Device Location") == *"Internal" ]]; then
 		bless --mount /Volumes/EFI --setBoot --file /Volumes/EFI/EFI/BOOT/BOOTX64.efi --shortform

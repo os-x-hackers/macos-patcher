@@ -677,6 +677,7 @@ Restore_Volume_dosdude()
 Restore_APFS()
 {
 	echo ${text_progress}"> Removing APFS system patch."${erase_style}
+	rm /Volumes/EFI/EFI/BOOT/startup.nsh /Volumes/EFI/EFI/BOOT
 	rm /Volumes/EFI/EFI/BOOT/BOOTX64.efi
 	rm /Volumes/EFI/EFI/apfs.efi
 

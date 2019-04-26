@@ -1,3 +1,9 @@
+echo -off
+set StartupDelay 1
+set -v efishellmode 1.1.2
+set macOSBootFile "System\Library\CoreServices\boot.efi"
+set targetUUID volume_uuid
+
 for %i run (0 9)
   if exist fs%i:\EFI\apfs.efi then
     load fs%i:\EFI\apfs.efi
