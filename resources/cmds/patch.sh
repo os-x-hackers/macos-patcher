@@ -716,7 +716,7 @@ Repair_Permissions()
 Input_Operation_APFS()
 {
 	if [[ "$(diskutil info "$volume_name"|grep "APFS")" == *"APFS"* ]]; then
-		if [[ $model_apfs == "1" && ! $volume_patch_apfs == "1" ]]; then
+		if [[ $model_apfs == "1" ]]; then
 			echo ${text_warning}"! Your system doesn't support APFS."${erase_style}
 			echo ${text_message}"/ What operation would you like to run?"${erase_style}
 			echo ${text_message}"/ Input an operation number."${erase_style}
