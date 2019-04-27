@@ -166,6 +166,32 @@ model_list="/     iMac7,1
 /     MacPro4,1
 /     Xserve2,1
 /     Xserve3,1"
+
+model_apfs="iMac7,1
+iMac8,1
+iMac9,1
+MacBook4,1
+MacBook5,1
+MacBook5,2
+MacBookAir2,1
+MacBookPro4,1
+MacBookPro5,1
+MacBookPro5,2
+MacBookPro5,3
+MacBookPro5,4
+MacBookPro5,5
+Macmini3,1
+MacPro3,1
+MacPro4,1
+Xserve2,1
+Xserve3,1"
+
+model_airport="iMac7,1
+iMac8,1
+MacBookAir2,1
+MacBookPro4,1
+Macmini3,1
+MacPro3,1"
 	
 	model_detected="$(sysctl -n hw.model)"
 
@@ -196,8 +222,11 @@ model_list="/     iMac7,1
 		echo ${text_success}"+ Using $model_selected as model."${erase_style}
 	fi
 
-	if [[ $model == "MacBookAir2,1" || $model == "MacBookPro4,1" || $model == "iMac7,1" || $model == "iMac8,1" || $model == "Macmini3,1" || $model == "MacPro3,1" ]]; then
+	if [[ "$model_airport" == *"$model"* ]]; then
 		model_airport="1"
+	fi
+	if [[ "$model_apfs" == *"$model"* ]]; then
+		model_apfs="1"
 	fi
 }
 
@@ -216,6 +245,28 @@ Input_Volume()
 	Input_Off
 
 	volume_path="/Volumes/$volume_name"
+}
+
+Mount_EFI()
+{
+	disk_identifier="$(diskutil info "$volume_name"|grep "Device Identifier")"
+	disk_identifier="disk${disk_identifier#*disk}"
+	disk_identifier_whole="$(diskutil info "$volume_name"|grep "Part of Whole")"
+	disk_identifier_whole="disk${disk_identifier_whole#*disk}"
+	
+	if [[ "$(diskutil info "$volume_name"|grep "APFS")" == *"APFS"* ]]; then
+		disk_identifier_whole="$(diskutil list|grep "\<$disk_identifier_whole\>")"
+		disk_identifier_whole="${disk_identifier_whole#*disk}"
+		disk_identifier_whole="${disk_identifier_whole#*disk}"
+		disk_identifier_whole="disk${disk_identifier_whole:0:1}"
+		disk_identifier_efi="${disk_identifier_whole}s1"
+	fi
+	
+	if [[ "$(diskutil info "$volume_name"|grep "HFS")" == *"HFS"* ]]; then
+		disk_identifier_efi="${disk_identifier_whole}s1"
+	fi
+
+	Output_Off diskutil mount $disk_identifier_efi
 }
 
 Check_Volume_Version()
@@ -280,6 +331,10 @@ Check_Volume_Version()
 		echo ${text_message}"/ Run the restore tool and reinstall before running the patch tool."${erase_style}
 		Input_On
 		exit
+	fi
+
+	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi && -e /Volumes/EFI/EFI/apfs.efi ]]; then
+		volume_patch_apfs="1"
 	fi
 
 	if [[ -e "$volume_path"/System/Library/PrivateFrameworks/CoreUI.framework/Versions/Current/CoreUI-bak ]]; then
@@ -658,6 +713,52 @@ Repair_Permissions()
 	echo ${move_up}${erase_line}${text_success}"+ Repaired permissions."${erase_style}
 }
 
+Input_Operation_APFS()
+{
+	if [[ "$(diskutil info "$volume_name"|grep "APFS")" == *"APFS"* ]]; then
+		if [[ $model_apfs == "1" ]]; then
+			echo ${text_warning}"! Your system doesn't support APFS."${erase_style}
+			echo ${text_message}"/ What operation would you like to run?"${erase_style}
+			echo ${text_message}"/ Input an operation number."${erase_style}
+			echo ${text_message}"/     1 - Install the APFS patch"${erase_style}
+			echo ${text_message}"/     2 - Continue without the APFS patch"${erase_style}
+			Input_On
+			read -e -p "/ " operation_apfs
+			Input_Off
+
+			if [[ $operation_apfs == "1" ]]; then
+				Patch_APFS
+			fi
+		fi
+	fi
+}
+
+Patch_APFS()
+{
+	echo ${text_progress}"> Installing APFS system patch."${erase_style}
+	volume_uuid="$(diskutil info "$volume_name"|grep "Volume UUID")"
+	volume_uuid="${volume_uuid:30:38}"
+
+	if [[ ! -d /Volumes/EFI/EFI/BOOT ]]; then
+		mkdir /Volumes/EFI/EFI/BOOT
+	fi
+
+	cp "$resources_path"/startup.nsh /Volumes/EFI/EFI/BOOT
+	cp "$resources_path"/BOOTX64.efi /Volumes/EFI/EFI/BOOT
+	cp "$volume_path"/usr/standalone/i386/apfs.efi /Volumes/EFI/EFI
+
+	if [[ -d "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane ]]; then
+		rm -R "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane
+	fi
+
+	sed -i '' "s/volume_uuid/$volume_uuid/g" /Volumes/EFI/EFI/BOOT/startup.nsh
+
+	if [[ $(diskutil info "$volume_name"|grep "Device Location") == *"Internal" ]]; then
+		bless --mount /Volumes/EFI --setBoot --file /Volumes/EFI/EFI/BOOT/BOOTX64.efi --shortform
+	fi
+	echo ${move_up}${erase_line}${text_success}"+ Installed APFS system patch."${erase_style}
+}
+
 Patch_Volume_Helpers()
 {
 	disk_identifier="$(diskutil info "$volume_name"|grep "Device Identifier")"
@@ -789,6 +890,8 @@ Patch_Volume_Helpers()
 
 End()
 {
+	Output_Off diskutil unmount /Volumes/EFI
+
 	echo ${text_message}"/ Thank you for using macOS Patcher."${erase_style}
 	Input_On
 	exit
@@ -804,8 +907,10 @@ Check_SIP
 Check_Resources
 Input_Model
 Input_Volume
+Mount_EFI
 Check_Volume_Version
 Patch_Volume
 Repair_Permissions
+Input_Operation_APFS
 Patch_Volume_Helpers
 End

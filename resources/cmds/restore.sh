@@ -148,6 +148,32 @@ model_list="/     iMac7,1
 /     MacPro4,1
 /     Xserve2,1
 /     Xserve3,1"
+
+model_apfs="iMac7,1
+iMac8,1
+iMac9,1
+MacBook4,1
+MacBook5,1
+MacBook5,2
+MacBookAir2,1
+MacBookPro4,1
+MacBookPro5,1
+MacBookPro5,2
+MacBookPro5,3
+MacBookPro5,4
+MacBookPro5,5
+Macmini3,1
+MacPro3,1
+MacPro4,1
+Xserve2,1
+Xserve3,1"
+
+model_airport="iMac7,1
+iMac8,1
+MacBookAir2,1
+MacBookPro4,1
+Macmini3,1
+MacPro3,1"
 	
 	model_detected="$(sysctl -n hw.model)"
 
@@ -178,8 +204,11 @@ model_list="/     iMac7,1
 		echo ${text_success}"+ Using $model_selected as model."${erase_style}
 	fi
 
-	if [[ $model == "MacBookAir2,1" || $model == "MacBookPro4,1" || $model == "iMac7,1" || $model == "iMac8,1" || $model == "Macmini3,1" || $model == "MacPro3,1" ]]; then
+	if [[ "$model_airport" == *"$model"* ]]; then
 		model_airport="1"
+	fi
+	if [[ "$model_apfs" == *"$model"* ]]; then
+		model_apfs="1"
 	fi
 }
 
@@ -198,6 +227,28 @@ Input_Volume()
 	Input_Off
 
 	volume_path="/Volumes/$volume_name"
+}
+
+Mount_EFI()
+{
+	disk_identifier="$(diskutil info "$volume_name"|grep "Device Identifier")"
+	disk_identifier="disk${disk_identifier#*disk}"
+	disk_identifier_whole="$(diskutil info "$volume_name"|grep "Part of Whole")"
+	disk_identifier_whole="disk${disk_identifier_whole#*disk}"
+	
+	if [[ "$(diskutil info "$volume_name"|grep "APFS")" == *"APFS"* ]]; then
+		disk_identifier_whole="$(diskutil list|grep "\<$disk_identifier_whole\>")"
+		disk_identifier_whole="${disk_identifier_whole#*disk}"
+		disk_identifier_whole="${disk_identifier_whole#*disk}"
+		disk_identifier_whole="disk${disk_identifier_whole:0:1}"
+		disk_identifier_efi="${disk_identifier_whole}s1"
+	fi
+	
+	if [[ "$(diskutil info "$volume_name"|grep "HFS")" == *"HFS"* ]]; then
+		disk_identifier_efi="${disk_identifier_whole}s1"
+	fi
+
+	Output_Off diskutil mount $disk_identifier_efi
 }
 
 Check_Volume_Version()
@@ -232,7 +283,7 @@ Check_Volume_Version()
 		volume_patch_variant="1"
 	fi
 
-	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi || -e /Volumes/EFI/EFI/apfs.efi ]]; then
+	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi && -e /Volumes/EFI/EFI/apfs.efi ]]; then
 		volume_patch_apfs="1"
 	fi
 
@@ -246,29 +297,6 @@ Check_Volume_Version()
 		volume_patch_menubar="1"
 	fi
 }
-
-Mount_EFI()
-{
-	disk_identifier="$(diskutil info "$volume_name"|grep "Device Identifier")"
-	disk_identifier="disk${disk_identifier#*disk}"
-	disk_identifier_whole="$(diskutil info "$volume_name"|grep "Part of Whole")"
-	disk_identifier_whole="disk${disk_identifier_whole#*disk}"
-	
-	if [[ "$(diskutil info "$volume_name"|grep "APFS")" == *"APFS"* ]]; then
-		disk_identifier_whole="$(diskutil list|grep "\<$disk_identifier_whole\>")"
-		disk_identifier_whole="${disk_identifier_whole#*disk}"
-		disk_identifier_whole="${disk_identifier_whole#*disk}"
-		disk_identifier_whole="disk${disk_identifier_whole:0:1}"
-		disk_identifier_efi="${disk_identifier_whole}s1"
-	fi
-	
-	if [[ "$(diskutil info "$volume_name"|grep "HFS")" == *"HFS"* ]]; then
-		disk_identifier_efi="${disk_identifier_whole}s1"
-	fi
-
-	Output_Off diskutil mount $disk_identifier_efi
-}
-
 
 Input_Operation()
 {
@@ -649,10 +677,11 @@ Restore_Volume_dosdude()
 Restore_APFS()
 {
 	echo ${text_progress}"> Removing APFS system patch."${erase_style}
+	rm /Volumes/EFI/EFI/BOOT/startup.nsh /Volumes/EFI/EFI/BOOT
 	rm /Volumes/EFI/EFI/BOOT/BOOTX64.efi
 	rm /Volumes/EFI/EFI/apfs.efi
 
-	if [[ $volume_patch_variant == "2" ]]; then
+	if [[ -d "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane ]]; then
 		rm -R "$volume_path"/Library/PreferencePanes/APFS\ Boot\ Selector.prefPane
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Removed APFS system patch."${erase_style}
@@ -717,8 +746,8 @@ Check_Root
 Check_SIP
 Input_Model
 Input_Volume
-Check_Volume_Version
 Mount_EFI
+Check_Volume_Version
 Input_Operation
 Run_Operation
 End
