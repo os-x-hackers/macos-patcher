@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 parameters="${1}${2}${3}${4}${5}${6}${7}${8}${9}"
@@ -29,6 +30,10 @@ Parameter_Variables()
 	if [[ $parameters == *"-v"* || $parameters == *"-verbose"* ]]; then
 		verbose="1"
 		set -x
+	fi
+	
+	if [[ $parameters == *"-m-pk"* || $parameters == *"-modern-prelinkedkernel"* ]]; then
+		modern_prelinkedkernel="1"
 	fi
 }
 
@@ -112,6 +117,10 @@ Check_Resources()
 		echo ${text_message}"/ Run this tool with the required resources."${erase_style}
 		Input_On
 		exit
+	fi
+
+	if [[ -d "$resources_path"/prelinkedkernel-modern ]]; then
+		modern_prelinkedkernel_check="1"
 	fi
 }
 
@@ -386,7 +395,11 @@ Patch_Unsupported()
 
 	echo ${text_progress}"> Patching kernel cache."${erase_style}
 	rm "$installer_volume_path"/System/Library/PrelinkedKernels/prelinkedkernel
-	cp "$resources_path"/cache/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
+	if [[ $modern_prelinkedkernel == "1" && $modern_prelinkedkernel_check == "1" ]]; then
+		cp "$resources_path"/prelinkedkernel-modern/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
+	else
+		cp "$resources_path"/prelinkedkernel/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
+	fi
 	chflags uchg "$installer_volume_path"/System/Library/PrelinkedKernels/prelinkedkernel
 	echo ${move_up}${erase_line}${text_success}"+ Patched kernel cache."${erase_style}
 
