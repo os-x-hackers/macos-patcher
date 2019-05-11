@@ -6,7 +6,7 @@
 	<string>com.rmc.pipagent</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/Library/Application\ Support/com.rmc.pipagent/pipagent.app/Contents/Resources/Scripts/detect.sh</string>
+		<string>/Library/Application\ Support/com.rmc.pipagent/pipagent</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>

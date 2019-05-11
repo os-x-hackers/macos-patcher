@@ -468,6 +468,7 @@ Patch_Package()
 
 	echo ${text_progress}"> Patching update package."${erase_style}
 	sed -i '' 's|<pkg-ref id="com\.apple\.pkg\.FirmwareUpdate" auth="Root" packageIdentifier="com\.apple\.pkg\.FirmwareUpdate">#FirmwareUpdate\.pkg<\/pkg-ref>||' "$package_folder"/Distribution
+	sed -i "" "s/my.target.filesystem &amp;&amp; my.target.filesystem.type == 'hfs'/1 == 0/" "$package_folder"/Distribution
 	sed -i '' 's/cpuFeatures\[i\] == "VMM"/1 == 1/' "$package_folder"/Distribution
 	sed -i '' 's/nonSupportedModels.indexOf(currentModel)&gt;= 0/1 == 0/' "$package_folder"/Distribution
 	sed -i '' 's/boardIds.indexOf(boardId)== -1/1 == 0/' "$package_folder"/Distribution
