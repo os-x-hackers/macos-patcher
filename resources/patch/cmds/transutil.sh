@@ -233,8 +233,9 @@ Input_Operation_Overwrite()
 	Input_Off
 
 	if [[ $operation_overwrite == "1" ]]; then
-		echo "\033[6A"${text_error}"! A transparency patch backup already exists."${erase_style}
-		echo ${text_message}"/ Run this tool with another operation."${erase_style}
+		echo "\033[7A"
+		echo ${erase_line}${text_error}"! A transparency patch backup already exists."${erase_style}
+		echo ${erase_line}${text_message}"/ Run this tool with another operation."${erase_style}
 		Input_On
 		exit
 	fi
@@ -301,7 +302,7 @@ Disable_Reduce_Transparency()
 
 Install_Hybrid_Mode()
 {
-	echo ${text_progress}"> Installing Hybrid Mode patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Installing Hybrid Mode patch."${erase_style}
 	curl -L -s -o /tmp/Hybrid\ Mode.zip https://github.com/SpiraMira/HybridMode-Public/releases/download/${!hybrid_url}.zip
 	unzip -o -q /tmp/Hybrid\ Mode.zip -d /tmp
 	cp "$volume_path"/System/Library/PrivateFrameworks/CoreUI.framework/Versions/Current/CoreUI "$volume_path"/System/Library/PrivateFrameworks/CoreUI.framework/Versions/Current/CoreUI-bak
@@ -311,12 +312,12 @@ Install_Hybrid_Mode()
 		cp "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox-bak
 		cp /tmp/HIToolbox* "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox
 	fi
-	echo ${move_up}${erase_line}${text_success}"+ Installed Hybrid Mode patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Installed Hybrid Mode patch."${erase_style}
 }
 
 Install_Flat_Mode()
 {
-	echo ${text_progress}"> Installing Flat Mode patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Installing Flat Mode patch."${erase_style}
 	curl -L -s -o /tmp/Flat\ Mode.zip https://github.com/SpiraMira/HybridMode-Public/releases/download/${!flat_url}.zip
 	unzip -o -q /tmp/Flat\ Mode.zip -d /tmp
 	cp "$volume_path"/System/Library/Frameworks/AppKit.framework/Versions/Current/AppKit "$volume_path"/System/Library/Frameworks/AppKit.framework/Versions/Current/AppKit-bak
@@ -326,7 +327,7 @@ Install_Flat_Mode()
 		cp "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox-bak
 		cp /tmp/HIToolbox* "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox
 	fi
-	echo ${move_up}${erase_line}${text_success}"+ Installed Flat Mode patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Installed Flat Mode patch."${erase_style}
 }
 
 Repair_755()

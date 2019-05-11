@@ -318,19 +318,45 @@ Check_Volume_Version()
 	fi
 
 	if [ -e $volume_path/Library/LaunchAgents/com.dd1* ]||[ -e $volume_path/Library/LaunchAgents/com.dosdude1* ]; then
-		if [[ $volume_version_short == "10.12" ]]; then
-			echo ${text_error}"- Your system has been patched with the macOS Sierra Patcher."${erase_style}
-		fi
-		if [[ $volume_version_short == "10.13" ]]; then
-			echo ${text_error}"- Your system has been patched with the macOS High Sierra Patcher."${erase_style}
-		fi
-		if [[ $volume_version_short == "10.14" ]]; then
-			echo ${text_error}"- Your system has been patched with the macOS Mojave Patcher."${erase_style}
-		fi
-
-		echo ${text_message}"/ Run the restore tool and reinstall before running the patch tool."${erase_style}
+		echo ${text_warning}"! A system patch by another patcher already exists."${erase_style}
+		echo ${text_message}"/ What operation would you like to run?"${erase_style}
+		echo ${text_message}"/ Input an operation number."${erase_style}
+		echo ${text_message}"/     1 - Abort and keep system patch"${erase_style}
+		echo ${text_message}"/     2 - Proceed and restore system"${erase_style}
 		Input_On
-		exit
+		read -e -p "/ " operation_overwrite
+		Input_Off
+
+		if [[ $operation_overwrite == "1" ]]; then
+			echo "\033[7A"
+			echo ${erase_line}${text_warning}"! A system patch by another patcher already exists."${erase_style}
+			echo ${erase_line}${text_message}"/ Run this tool with another operation."${erase_style}
+			Input_On
+			exit
+		fi
+		if [[ $operation_overwrite == "2" ]]; then
+			echo "\033[7A"
+			echo ${erase_line}${text_warning}"! A system restore requires a reinstall after completion."
+			echo ${erase_line}${text_message}"/ Are you sure you want to continue?."${erase_style}
+			echo ${erase_line}${text_message}"/ Input an operation number."${erase_style}
+			echo ${erase_line}${text_message}"/     1 - No"${erase_style}
+			echo ${erase_line}${text_message}"/     2 - Yes"${erase_style}
+			Input_On
+			read -e -p "/ " operation_confirmation
+			Input_Off
+
+			if [[ $operation_confirmation == "1" ]]; then
+				echo "\033[7A"
+				echo ${erase_line}${text_warning}"! A system patch by another patcher already exists."${erase_style}
+				echo ${erase_line}${text_message}"/ Run this tool with another operation."${erase_style}
+				Input_On
+				exit
+			fi
+			if [[ $operation_confirmation == "2" ]]; then
+				echo "\033[7A"
+				source /usr/bin/restore; Restore_Volume_dosdude
+			fi
+		fi
 	fi
 
 	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi && -e /Volumes/EFI/EFI/apfs.efi ]]; then
@@ -345,6 +371,29 @@ Check_Volume_Version()
 	fi
 	if [[ -e "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox-bak ]]; then
 		volume_patch_menubar="1"
+	fi
+}
+
+Clean_Volume()
+{
+	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
+	rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
+	fi
+	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
+		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
+	fi
+	if [[ -d "$volume_path"/usr/sudagent ]]; then
+		rm -R "$volume_path"/usr/sudagent
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudcheck ]]; then
+		rm "$volume_path"/usr/bin/sudcheck
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudutil ]]; then
+		rm "$volume_path"/usr/bin/sudutil
+	fi
+
+	if [[ -d "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent.app ]]; then
+		rm -R "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent.app
 	fi
 }
 
@@ -540,9 +589,10 @@ Patch_Volume()
 
 	cp "$volume_path/$system_version_path" "$volume_path/$system_version_pip_path"
 	cp "$resources_path"/com.rmc.pipagent.plist "$volume_path"/Library/LaunchAgents
-	cp -R "$resources_path"/pipagent.app "$volume_path"/Library/Application\ Support/com.rmc.pipagent/
+	cp -R "$resources_path"/Patch\ Integrity\ Protection.app "$volume_path"/Library/Application\ Support/com.rmc.pipagent/
+	cp "$resources_path"/cmds/pipagent.sh "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent
 	cp "$resources_path"/cmds/piputil.sh "$volume_path"/usr/bin/piputil
-	chmod +x "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent.app/Contents/Resources/Scripts/detect.sh
+	chmod +x "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent
 	chmod +x "$volume_path"/usr/bin/piputil
 
 	if [[ $volume_version_short == "10.14" ]]; then
@@ -560,22 +610,6 @@ Patch_Volume()
 				rm "$volume_path"/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Versions/Current/HIToolbox-bak
 			fi
 		fi
-	fi
-
-	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
-		rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
-	fi
-	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
-		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
-	fi
-	if [[ -d "$volume_path"/usr/sudagent ]]; then
-		rm -R "$volume_path"/usr/sudagent
-	fi
-	if [[ -e "$volume_path"/usr/bin/sudcheck ]]; then
-		rm "$volume_path"/usr/bin/sudcheck
-	fi
-	if [[ -e "$volume_path"/usr/bin/sudutil ]]; then
-		rm "$volume_path"/usr/bin/sudutil
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Copied patcher utilities."${erase_style}
 }
@@ -909,6 +943,7 @@ Input_Model
 Input_Volume
 Mount_EFI
 Check_Volume_Version
+Clean_Volume
 Patch_Volume
 Repair_Permissions
 Input_Operation_APFS

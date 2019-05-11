@@ -344,6 +344,7 @@ Run_Operation()
 {
 	if [[ $operation_system == "1" ]]; then
 		if [[ $volume_patch_variant == "1" ]]; then
+			Clean_Volume
 			Restore_Volume
 		fi
 		if [[ $volume_patch_variant == "2" ]]; then
@@ -370,6 +371,29 @@ Run_Operation()
 	if [[ $operation_transparency == "1" && $volume_patch_flat_mode == "1" ]]; then
 		Restore_Flat_Mode
 		Repair_Permissions_Volume
+	fi
+}
+
+Clean_Volume()
+{
+	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
+	rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
+	fi
+	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
+		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
+	fi
+	if [[ -d "$volume_path"/usr/sudagent ]]; then
+		rm -R "$volume_path"/usr/sudagent
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudcheck ]]; then
+		rm "$volume_path"/usr/bin/sudcheck
+	fi
+	if [[ -e "$volume_path"/usr/bin/sudutil ]]; then
+		rm "$volume_path"/usr/bin/sudutil
+	fi
+
+	if [[ -d "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent.app ]]; then
+		rm -R "$volume_path"/Library/Application\ Support/com.rmc.pipagent/pipagent.app
 	fi
 }
 
@@ -536,28 +560,12 @@ Restore_Volume()
 	if [[ $volume_version_short == "10.14" ]]; then
 		rm "$volume_path"/usr/bin/transutil
 	fi
-
-	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
-		rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
-	fi
-	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
-		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
-	fi
-	if [[ -d "$volume_path"/usr/sudagent ]]; then
-		rm -R "$volume_path"/usr/sudagent
-	fi
-	if [[ -e "$volume_path"/usr/bin/sudcheck ]]; then
-		rm "$volume_path"/usr/bin/sudcheck
-	fi
-	if [[ -e "$volume_path"/usr/bin/sudutil ]]; then
-		rm "$volume_path"/usr/bin/sudutil
-	fi
 	echo ${move_up}${erase_line}${text_success}"+ Removed patcher utilities."${erase_style}
 }
 
 Restore_Volume_dosdude()
 {
-	echo ${text_progress}"> Removing input drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing input drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/Library/Extensions/LegacyUSBInjector.kext
 	Output_Off rm -R "$volume_path"/Library/Extensions/LegacyUSBEthernet.kext
 
@@ -565,9 +573,9 @@ Restore_Volume_dosdude()
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOUSBHostFamily.kext
 
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleUSBTopCase.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed input drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed input drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing graphics drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing graphics drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOAccelerator2D.plugin
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOAcceleratorFamily2.kext
 
@@ -616,59 +624,59 @@ Restore_Volume_dosdude()
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/ATIRadeonX2000GA.plugin
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/ATIRadeonX2000GLDriver.bundle
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/ATIRadeonX2000VADriver.bundle
-	echo ${move_up}${erase_line}${text_success}"+ Removed graphics drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed graphics drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing audio drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing audio drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleHDA.kext
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOAudioFamily.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed audio drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed audio drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing backlight drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing backlight drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/DisplayServices.framework
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleBacklight.kext
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleBacklightExpert.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed backlight drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed backlight drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing ambient light sensor drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing ambient light sensor drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleSMCLMU.kext/Contents/PlugIns/AmbientLightSensorHID.plugin
-	echo ${move_up}${erase_line}${text_success}"+ Removed ambient light sensor drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed ambient light sensor drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing battery status patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing battery status patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/AppleSmartBatteryManager.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed battery status patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed battery status patch."${erase_style}
 
-	echo ${text_progress}"> Removing AirPort drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing AirPort drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AppleAirPortBrcm43224.kext
 
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/corecapture.kext
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/CoreCaptureResponder.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed AirPort drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed AirPort drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing Bluetooth drivers patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing Bluetooth drivers patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOBluetoothFamily.kext
 	Output_Off rm -R "$volume_path"/System/Library/Extensions/IOBluetoothHIDDriver.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed Bluetooth drivers patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed Bluetooth drivers patch."${erase_style}
 
-	echo ${text_progress}"> Removing Siri application patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing Siri application patch."${erase_style}
 	Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/SiriUI.framework
-	echo ${move_up}${erase_line}${text_success}"+ Removed Siri application patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed Siri application patch."${erase_style}
 
-	echo ${text_progress}"> Removing software update check patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing software update check patch."${erase_style}
 	Output_Off rm "$volume_path"/usr/local/lib/SUVMMFaker.dylib
 	Output_Off rm "$volume_path"/System/Library/LaunchDaemons/com.apple.softwareupdated.plist
-	echo ${move_up}${erase_line}${text_success}"+ Removed software update check patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed software update check patch."${erase_style}
 
-	echo ${text_progress}"> Removing System Integrity Protection patch."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing System Integrity Protection patch."${erase_style}
 	Output_Off rm "$volume_path"/usr/local/sbin/SIPLD
 	Output_Off rm -R "$volume_path"/Library/Extensions/SIPManager.kext
-	echo ${move_up}${erase_line}${text_success}"+ Removed System Integrity Protection patch."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed System Integrity Protection patch."${erase_style}
 
-	echo ${text_progress}"> Removing Patch Updater."${erase_style}
+	echo ${erase_line}${text_progress}"> Removing Patch Updater."${erase_style}
 	Output_Off rm "$volume_path"/usr/local/sbin/patchupdaterd
 	Output_Off rm -R "$volume_path"/Applications/Utilities/Patch\ Updater.app
 	Output_Off rm -R "$volume_path"/Library/PreferencePanes/Patch Updater Prefpane.prefPane
-	echo ${move_up}${erase_line}${text_success}"+ Removed Patch Updater."${erase_style}
+	echo ${erase_line}${move_up}${erase_line}${text_success}"+ Removed Patch Updater."${erase_style}
 
 	Output_Off rm "$volume_path"/Library/LaunchAgents/com.dd1*
 	Output_Off rm "$volume_path"/Library/LaunchAgents/com.dosdude1*
