@@ -354,7 +354,7 @@ Check_Volume_Version()
 			fi
 			if [[ $operation_confirmation == "2" ]]; then
 				echo "\033[7A"
-				source /usr/bin/restore; Restore_Volume_dosdude
+				source "$directory_path"/restore; Restore_Volume_dosdude
 			fi
 		fi
 	fi
@@ -481,13 +481,16 @@ Patch_Volume()
 		cp -R "$resources_path"/NVDAResmanTesla.kext "$volume_path"/System/Library/Extensions
 	fi
 
-	if [[ $volume_version == "10.14.5" ]]; then
-		Output_Off rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
+	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
 		Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		Output_Off rm -R "$volume_path"/System/Library/Frameworks/OpenGL.framework
-		cp -R "$resources_path"/CoreDisplay.framework "$volume_path"/System/Library/Frameworks
 		cp -R "$resources_path"/GPUSupport.framework "$volume_path"/System/Library/PrivateFrameworks
 		cp -R "$resources_path"/OpenGL.framework "$volume_path"/System/Library/Frameworks
+	fi
+
+	if [[ $volume_version == "10.14.5" ]]; then
+		Output_Off rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
+		cp -R "$resources_path"/CoreDisplay.framework "$volume_path"/System/Library/Frameworks
 	fi
 
 	if [[ $model == "MacBook4,1" ]]; then
