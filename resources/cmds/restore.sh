@@ -482,9 +482,12 @@ Restore_Volume()
 	fi
 
 	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
-		rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 		rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		rm -R "$volume_path"/System/Library/Frameworks/OpenGL.framework
+	fi
+
+	if [[ $volume_version == "10.14.5" ]]; then
+		rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 	fi
 
 	if [[ $model == "MacBook4,1" ]]; then

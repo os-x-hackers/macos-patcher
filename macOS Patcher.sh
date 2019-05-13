@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 parameters="${1}${2}${3}${4}${5}${6}${7}${8}${9}"
@@ -235,7 +234,7 @@ Check_Installer_Support()
 		installer_prelinkedkernel="10.14.1"
 		installer_patch_supported="1"
 	fi
-	if [[ $installer_version == "10.14.4" ]]; then
+	if [[ $installer_version == "10.14.4" || $installer_version == "10.14.5" ]]; then
 		installer_prelinkedkernel="10.14.4"
 		installer_patch_supported="1"
 	fi
