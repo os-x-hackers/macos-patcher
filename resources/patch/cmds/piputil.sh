@@ -36,20 +36,20 @@ Path_Variables()
 {
 	script_path="${0}"
 	directory_path="${0%/*}"
-
-	system_version_path="System/Library/CoreServices/SystemVersion.plist"
 }
 
 Input_Off()
 {
 	stty -echo
 }
+
 Input_On()
 {
 	stty echo
 }
 
-Output_Off() {
+Output_Off()
+{
 	if [[ $verbose == "1" ]]; then
 		"$@"
 	else
@@ -123,23 +123,27 @@ Input_Operation()
 			Input_On
 			exit
 		fi
+
 		if [[ $pip_config == *"0"* ]]; then
 			echo ${text_message}"+ System Update Detection is disabled."${erase_style}
 			Input_On
 			exit
 		fi
+
 		if [[ ! $pip_config == *"1"* && ! $pip_config == *"0"* ]]; then
 			echo ${text_message}"+ System Update Detection is enabled."${erase_style}
 			Input_On
 			exit
 		fi
 	fi
+
 	if [[ $operation == "2" ]]; then
 		nvram pipconfig="1"
 		echo ${move_up}${erase_line}${text_success}"+ Enabled Patch Integrity Protection."${erase_style}
 		Input_On
 		exit
 	fi
+
 	if [[ $operation == "3" ]]; then
 		nvram pipconfig="0"
 		echo ${move_up}${erase_line}${text_success}"+ Disabled Patch Integrity Protection."${erase_style}

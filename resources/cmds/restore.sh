@@ -36,21 +36,20 @@ Path_Variables()
 {
 	script_path="${0}"
 	directory_path="${0%/*}"
-
-	system_version_path="System/Library/CoreServices/SystemVersion.plist"
-	system_version_pip_path="System/Library/CoreServices/SystemVersion-pip.plist"
 }
 
 Input_Off()
 {
 	stty -echo
 }
+
 Input_On()
 {
 	stty echo
 }
 
-Output_Off() {
+Output_Off()
+{
 	if [[ $verbose == "1" ]]; then
 		"$@"
 	else
@@ -254,33 +253,30 @@ Mount_EFI()
 Check_Volume_Version()
 {
 	echo ${text_progress}"> Checking system version."${erase_style}	
-	volume_version="$(grep -A1 "ProductVersion" "$volume_path/$system_version_path")"
+	volume_version="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+	volume_version_short="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 
-	volume_version="${volume_version#*<string>}"
-	volume_version="${volume_version%</string>*}"
-
-	volume_version_short="${volume_version:0:5}"
+	volume_build="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductBuildVersion)"
 	echo ${move_up}${erase_line}${text_success}"+ Checked system version."${erase_style}
+}
 
+Check_Volume_Support()
+{
 	echo ${text_progress}"> Checking system support."${erase_style}
-	if [[ $volume_version_short == "10.12" || $volume_version_short == "10.13" || $volume_version_short == "10.14" ]]; then
-		volume_patch_supported="1"
-	fi
-
-	if [[ $volume_patch_supported == "1" ]]; then
+	if [[ $volume_version_short == "10.1"[2-4] ]]; then
 		echo ${move_up}${erase_line}${text_success}"+ System support check passed."${erase_style}
-	fi
-	if [[ ! $volume_patch_supported == "1" ]]; then
+	else
 		echo ${text_error}"- System support check failed."${erase_style}
 		echo ${text_message}"/ Run this tool on a supported system."${erase_style}
 		Input_On
 		exit
 	fi
+}
 
-	if [ -e $volume_path/Library/LaunchAgents/com.dd1* ]||[ -e $volume_path/Library/LaunchAgents/com.dosdude1* ]; then
-		volume_patch_variant="2"
-	else
-		volume_patch_variant="1"
+Volume_Variables()
+{
+	if [ -e $volume_path/Library/LaunchAgents/com.dd1* ] || [ -e $volume_path/Library/LaunchAgents/com.dosdude1* ]; then
+		volume_patch_variant_dosdude="1"
 	fi
 
 	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi && -e /Volumes/EFI/EFI/apfs.efi ]]; then
@@ -312,6 +308,7 @@ Input_Operation()
 		echo ${text_message}"/ What operation would you like to run?"${erase_style}
 		echo ${text_message}"/ Input an operation number."${erase_style}
 		echo ${text_message}"/     1 - Remove all system patches"${erase_style}
+
 		if [[ $volume_patch_apfs == "1" ]]; then
 			echo ${text_message}"/     2 - Remove APFS system patch"${erase_style}
 		fi
@@ -319,13 +316,16 @@ Input_Operation()
 		read -e -p "/ " operation_system
 		Input_Off
 	fi
+
 	if [[ $operation == "2" ]]; then
 		if [[ $volume_patch_hybrid_mode == "1" || $volume_patch_flat_mode == "1" ]]; then
 			echo ${text_message}"/ What operation would you like to run?"${erase_style}
 			echo ${text_message}"/ Input an operation number."${erase_style}
+
 			if [[ $volume_patch_hybrid_mode == "1" ]]; then
 				echo ${text_message}"/     1 - Remove hybrid mode patch"${erase_style}
 			fi
+
 			if [[ $volume_patch_flat_mode == "1" ]]; then
 				echo ${text_message}"/     1 - Remove flat mode patch"${erase_style}
 			fi
@@ -343,12 +343,11 @@ Input_Operation()
 Run_Operation()
 {
 	if [[ $operation_system == "1" ]]; then
-		if [[ $volume_patch_variant == "1" ]]; then
+		if [[ $volume_patch_variant_dosdude == "1" ]]; then
+			Restore_Volume_dosdude
+		else
 			Clean_Volume
 			Restore_Volume
-		fi
-		if [[ $volume_patch_variant == "2" ]]; then
-			Restore_Volume_dosdude
 		fi
 
 		if [[ $volume_patch_hybrid_mode == "1" ]]; then
@@ -377,11 +376,13 @@ Run_Operation()
 Clean_Volume()
 {
 	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
-	rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
+		rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
 	fi
+
 	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
 		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
 	fi
+
 	if [[ -d "$volume_path"/usr/sudagent ]]; then
 		rm -R "$volume_path"/usr/sudagent
 	fi
@@ -430,7 +431,7 @@ Restore_Volume()
 	echo ${move_up}${erase_line}${text_success}"+ Removed input drivers patch."${erase_style}
 
 	echo ${text_progress}"> Removing graphics drivers patch."${erase_style}
-	if [[ $volume_version_short == "10.13" || $volume_version_short == "10.14" ]]; then
+	if [[ $volume_version_short == "10.1"[3-4] ]]; then
 		rm -R "$volume_path"/System/Library/Extensions/AMDRadeonX3000.kext
 		rm -R "$volume_path"/System/Library/Extensions/AMDRadeonX3000GLDriver.bundle
 		rm -R "$volume_path"/System/Library/Extensions/AMDRadeonX4000.kext
@@ -481,12 +482,12 @@ Restore_Volume()
 		rm -R "$volume_path"/System/Library/Extensions/NVDAResmanTesla.kext
 	fi
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[4-6] ]]; then
 		rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		rm -R "$volume_path"/System/Library/Frameworks/OpenGL.framework
 	fi
 
-	if [[ $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[5-6] ]]; then
 		rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 	fi
 
@@ -496,6 +497,13 @@ Restore_Volume()
 		rm -R "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100GA.plugin
 		rm -R "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100GLDriver.bundle
 		rm -R "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100VADriver.bundle
+	fi
+
+	if [[ $model == "MacBookPro6,2" && $volume_version == "10.14."[5-6] ]]; then
+		rm -R "$volume_path"/System/Library/Extensions/AppleGraphicsControl.kext
+		rm -R "$volume_path"/System/Library/Extensions/AppleGraphicsPowerManagement.kext
+		rm -R "$volume_path"/System/Library/Extensions/AppleMCCSControl.kext
+		rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUWrangler.framework
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Removed graphics drivers patch."${erase_style}
 
@@ -514,7 +522,7 @@ Restore_Volume()
 	rm -R "$volume_path"/System/Library/Extensions/AppleSMCLMU.kext/Contents/PlugIns/AmbientLightSensorHID.plugin
 	echo ${move_up}${erase_line}${text_success}"+ Removed ambient light sensor drivers patch."${erase_style}
 
-	if [[ $model_airport == "1" || $volume_version_short == "10.14" ]]; then
+	if [[ $model_airport == "1" || $model == "MacBook4,1" || $volume_version_short == "10.14" ]]; then
 		echo ${text_progress}"> Removing AirPort drivers patch."${erase_style}
 	fi
 
@@ -528,7 +536,11 @@ Restore_Volume()
 		rm -R "$volume_path"/System/Library/Extensions/CoreCaptureResponder.kext
 	fi
 
-	if [[ $model_airport == "1" || $volume_version_short == "10.14" ]]; then
+	if [[ $model == "MacBook4,1" ]]; then
+		rm -R "$volume_path"/System/Library/Extensions/IO80211Family.kext
+	fi
+
+	if [[ $model_airport == "1" || $model == "MacBook4,1" || $volume_version_short == "10.14" ]]; then
 		echo ${move_up}${erase_line}${text_success}"+ Removed AirPort drivers patch."${erase_style}
 	fi
 
@@ -539,7 +551,7 @@ Restore_Volume()
 		echo ${move_up}${erase_line}${text_success}"+ Removed Bluetooth drivers patch."${erase_style}
 	fi
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[4-6] ]]; then
 		echo ${text_progress}"> Removing Siri application patch."${erase_style}
 		rm -R "$volume_path"/System/Library/PrivateFrameworks/SiriUI.framework
 		echo ${move_up}${erase_line}${text_success}"+ Removed Siri application patch."${erase_style}
@@ -759,6 +771,8 @@ Input_Model
 Input_Volume
 Mount_EFI
 Check_Volume_Version
+Check_Volume_Support
+Volume_Variables
 Input_Operation
 Run_Operation
 End

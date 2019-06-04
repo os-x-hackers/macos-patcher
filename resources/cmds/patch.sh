@@ -38,21 +38,20 @@ Path_Variables()
 	directory_path="${0%/*}"
 
 	resources_path="${directory_path%/*}/patch"
-
-	system_version_path="System/Library/CoreServices/SystemVersion.plist"
-	system_version_pip_path="System/Library/CoreServices/SystemVersion-pip.plist"
 }
 
 Input_Off()
 {
 	stty -echo
 }
+
 Input_On()
 {
 	stty echo
 }
 
-Output_Off() {
+Output_Off()
+{
 	if [[ $verbose == "1" ]]; then
 		"$@"
 	else
@@ -272,42 +271,16 @@ Mount_EFI()
 Check_Volume_Version()
 {
 	echo ${text_progress}"> Checking system version."${erase_style}	
-	volume_version="$(grep -A1 "ProductVersion" "$volume_path/$system_version_path")"
-	volume_build="$(grep -A1 "ProductBuildVersion" "$volume_path/$system_version_path")"
+	volume_version="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+	volume_version_short="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 
-	volume_version="${volume_version#*<string>}"
-	volume_version="${volume_version%</string>*}"
-	volume_build="${volume_build#*<string>}"
-	volume_build="${volume_build%</string>*}"
+	volume_build="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductBuildVersion)"
 
-	volume_version_short="${volume_version:0:5}"
+	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-pip.plist ]]; then
+		volume_version_pip="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion-pip.plist ProductVersion)"
+		volume_version_pip_short="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion-pip.plist ProductVersion | cut -c-5)"
 
-	if [[ -e "$volume_path/$system_version_pip_path" ]]; then
-		volume_version_pip="$(grep -A1 "ProductVersion" "$volume_path/$system_version_pip_path")"
-		volume_build_pip="$(grep -A1 "ProductBuildVersion" "$volume_path/$system_version_pip_path")"
-
-		volume_version_pip="${volume_version_pip#*<string>}"
-		volume_version_pip="${volume_version_pip%</string>*}"
-		volume_build_pip="${volume_build_pip#*<string>}"
-		volume_build_pip="${volume_build_pip%</string>*}"
-
-		volume_version_pip_short="${volume_version:0:5}"
-	fi
-	echo ${move_up}${erase_line}${text_success}"+ Checked system version."${erase_style}
-
-	echo ${text_progress}"> Checking system support."${erase_style}
-	if [[ $volume_version_short == "10.12" || $volume_version_short == "10.13" || $volume_version_short == "10.14" ]]; then
-		volume_patch_supported="1"
-	fi
-
-	if [[ $volume_patch_supported == "1" ]]; then
-		echo ${move_up}${erase_line}${text_success}"+ System support check passed."${erase_style}
-	fi
-	if [[ ! $volume_patch_supported == "1" ]]; then
-		echo ${text_error}"- System support check failed."${erase_style}
-		echo ${text_message}"/ Run this tool on a supported system."${erase_style}
-		Input_On
-		exit
+		volume_build_pip="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion-pip.plist ProductBuildVersion)"
 	fi
 
 	if [[ ! $volume_version == $volume_version_pip ]]; then
@@ -316,8 +289,25 @@ Check_Volume_Version()
 	if [[ ! $volume_build == $volume_build_pip ]]; then
 		volume_builds_differ="1"
 	fi
+	echo ${move_up}${erase_line}${text_success}"+ Checked system version."${erase_style}
+}
 
-	if [ -e $volume_path/Library/LaunchAgents/com.dd1* ]||[ -e $volume_path/Library/LaunchAgents/com.dosdude1* ]; then
+Check_Volume_Support()
+{
+	echo ${text_progress}"> Checking system support."${erase_style}
+	if [[ $volume_version_short == "10.1"[2-4] ]]; then
+		echo ${move_up}${erase_line}${text_success}"+ System support check passed."${erase_style}
+	else
+		echo ${text_error}"- System support check failed."${erase_style}
+		echo ${text_message}"/ Run this tool on a supported system."${erase_style}
+		Input_On
+		exit
+	fi
+}
+
+Check_Volume_dosdude()
+{
+	if [ -e $volume_path/Library/LaunchAgents/com.dd1* ] || [ -e $volume_path/Library/LaunchAgents/com.dosdude1* ]; then
 		echo ${text_warning}"! A system patch by another patcher already exists."${erase_style}
 		echo ${text_message}"/ What operation would you like to run?"${erase_style}
 		echo ${text_message}"/ Input an operation number."${erase_style}
@@ -334,6 +324,7 @@ Check_Volume_Version()
 			Input_On
 			exit
 		fi
+
 		if [[ $operation_overwrite == "2" ]]; then
 			echo "\033[7A"
 			echo ${erase_line}${text_warning}"! A system restore requires a reinstall after completion."
@@ -352,13 +343,18 @@ Check_Volume_Version()
 				Input_On
 				exit
 			fi
+
 			if [[ $operation_confirmation == "2" ]]; then
 				echo "\033[7A"
-				source "$directory_path"/restore; Restore_Volume_dosdude
+				source "$directory_path"/restore
+				Restore_Volume_dosdude
 			fi
 		fi
 	fi
+}
 
+Volume_Variables()
+{
 	if [[ -e /Volumes/EFI/EFI/BOOT/BOOTX64.efi && -e /Volumes/EFI/EFI/apfs.efi ]]; then
 		volume_patch_apfs="1"
 	fi
@@ -377,11 +373,13 @@ Check_Volume_Version()
 Clean_Volume()
 {
 	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist ]]; then
-	rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
+		rm "$volume_path"/System/Library/CoreServices/SystemVersion-sud.plist
 	fi
+
 	if [[ -e "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist ]]; then
 		rm "$volume_path"/Library/LaunchAgents/com.startup.sudcheck.plist
 	fi
+
 	if [[ -d "$volume_path"/usr/sudagent ]]; then
 		rm -R "$volume_path"/usr/sudagent
 	fi
@@ -430,7 +428,7 @@ Patch_Volume()
 	echo ${move_up}${erase_line}${text_success}"+ Patched input drivers."${erase_style}
 
 	echo ${text_progress}"> Patching graphics drivers."${erase_style}
-	if [[ $volume_version_short == "10.13" || $volume_version_short == "10.14" ]]; then
+	if [[ $volume_version_short == "10.1"[3-4] ]]; then
 		cp -R "$resources_path"/AMDRadeonX3000.kext "$volume_path"/System/Library/Extensions
 		cp -R "$resources_path"/AMDRadeonX3000GLDriver.bundle "$volume_path"/System/Library/Extensions
 		cp -R "$resources_path"/AMDRadeonX4000.kext "$volume_path"/System/Library/Extensions
@@ -481,14 +479,14 @@ Patch_Volume()
 		cp -R "$resources_path"/NVDAResmanTesla.kext "$volume_path"/System/Library/Extensions
 	fi
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[4-6] ]]; then
 		Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		Output_Off rm -R "$volume_path"/System/Library/Frameworks/OpenGL.framework
 		cp -R "$resources_path"/GPUSupport.framework "$volume_path"/System/Library/PrivateFrameworks
 		cp -R "$resources_path"/OpenGL.framework "$volume_path"/System/Library/Frameworks
 	fi
 
-	if [[ $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[5-6] ]]; then
 		Output_Off rm -R "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 		cp -R "$resources_path"/CoreDisplay.framework "$volume_path"/System/Library/Frameworks
 	fi
@@ -499,6 +497,13 @@ Patch_Volume()
 		cp -R "$resources_path"/MacBook4,1/AppleIntelGMAX3100GA.plugin "$volume_path"/System/Library/Extensions
 		cp -R "$resources_path"/MacBook4,1/AppleIntelGMAX3100GLDriver.bundle "$volume_path"/System/Library/Extensions
 		cp -R "$resources_path"/MacBook4,1/AppleIntelGMAX3100VADriver.bundle "$volume_path"/System/Library/Extensions
+	fi
+
+	if [[ $model == "MacBookPro6,2" && $volume_version == "10.14."[5-6] ]]; then
+		cp -R "$resources_path"/AppleGraphicsControl.kext "$volume_path"/System/Library/Extensions
+		cp -R "$resources_path"/AppleGraphicsPowerManagement.kext "$volume_path"/System/Library/Extensions
+		cp -R "$resources_path"/AppleMCCSControl.kext "$volume_path"/System/Library/Extensions
+		cp -R "$resources_path"/GPUWrangler.framework "$volume_path"/System/Library/PrivateFrameworks
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Patched graphics drivers."${erase_style}
 
@@ -524,7 +529,7 @@ Patch_Volume()
 	cp -R "$resources_path"/AmbientLightSensorHID.plugin "$volume_path"/System/Library/Extensions/AppleSMCLMU.kext/Contents/PlugIns/
 	echo ${move_up}${erase_line}${text_success}"+ Patched ambient light sensor drivers."${erase_style}
 
-	if [[ $model_airport == "1" || $volume_version_short == "10.14" ]]; then
+	if [[ $model_airport == "1" || $model == "MacBook4,1" || $volume_version_short == "10.14" ]]; then
 		echo ${text_progress}"> Patching AirPort drivers."${erase_style}
 	fi
 
@@ -539,7 +544,12 @@ Patch_Volume()
 		Output_Off rm -R "$volume_path"/System/Library/Extensions/IO80211FamilyV2.kext
 	fi
 
-	if [[ $model_airport == "1" || $volume_version_short == "10.14" ]]; then
+	if [[ $model == "MacBook4,1" ]]; then
+		cp -R "$resources_path"/MacBook4,1/IO80211Family.kext "$volume_path"/System/Library/Extensions
+		cp -R "$resources_path"/MacBook4,1/AppleAirPortBrcm43.kext "$volume_path"/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns
+	fi
+
+	if [[ $model_airport == "1" || $model == "MacBook4,1" || $volume_version_short == "10.14" ]]; then
 		echo ${move_up}${erase_line}${text_success}"+ Patched AirPort drivers."${erase_style}
 	fi
 
@@ -550,7 +560,7 @@ Patch_Volume()
 		echo ${move_up}${erase_line}${text_success}"+ Patched Bluetooth drivers."${erase_style}
 	fi
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[4-6] ]]; then
 		echo ${text_progress}"> Patching Siri application."${erase_style}
 		Output_Off rm -R "$volume_path"/System/Library/PrivateFrameworks/SiriUI.framework
 		cp -R "$resources_path"/SiriUI.framework "$volume_path"/System/Library/PrivateFrameworks
@@ -698,7 +708,7 @@ Repair_Permissions()
 	Repair "$volume_path"/System/Library/Extensions/NVDANV50HalTesla.kext
 	Repair "$volume_path"/System/Library/Extensions/NVDAResmanTesla.kext
 
-	if [[ $volume_version == "10.14.4" || $volume_version == "10.14.5" ]]; then
+	if [[ $volume_version == "10.14."[4-6] ]]; then
 		Repair "$volume_path"/System/Library/Frameworks/CoreDisplay.framework
 		Repair "$volume_path"/System/Library/PrivateFrameworks/GPUSupport.framework
 		Repair "$volume_path"/System/Library/Frameworks/OpenGL.framework
@@ -710,6 +720,13 @@ Repair_Permissions()
 		Repair "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100GA.plugin
 		Repair "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100GLDriver.bundle
 		Repair "$volume_path"/System/Library/Extensions/AppleIntelGMAX3100VADriver.bundle
+	fi
+
+	if [[ $model == "MacBookPro6,2" && $volume_version == "10.14."[5-6] ]]; then
+		Repair "$volume_path"/System/Library/Extensions/AppleGraphicsControl.kext
+		Repair "$volume_path"/System/Library/Extensions/AppleGraphicsPowerManagement.kext
+		Repair "$volume_path"/System/Library/Extensions/AppleMCCSControl.kext
+		Repair "$volume_path"/System/Library/PrivateFrameworks/GPUWrangler.framework
 	fi
 
 	Repair "$volume_path"/System/Library/Extensions/AppleHDA.kext
@@ -728,6 +745,8 @@ Repair_Permissions()
 	fi
 
 	if [[ $model == "MacBook4,1" ]]; then
+		Repair "$volume_path"/System/Library/Extensions/IO80211Family.kext
+
 		Repair "$volume_path"/System/Library/Extensions/IOBluetoothFamily.kext
 		Repair "$volume_path"/System/Library/Extensions/IOBluetoothHIDDriver.kext
 	fi
@@ -825,12 +844,8 @@ Patch_Volume_Helpers()
 
 			for numeric_folder in /Volumes/Preboot/*; do
 				if [[ -e "$numeric_folder/$system_version_path" ]]; then
-					preboot_version="$(grep -A1 "ProductVersion" "$numeric_folder/$system_version_path")"
-	
-					preboot_version="${preboot_version#*<string>}"
-					preboot_version="${preboot_version%</string>*}"
-	
-					preboot_version_short="${preboot_version:0:5}"
+					preboot_version="$(defaults read "$numeric_folder"/System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+					preboot_version_short="$(defaults read "$numeric_folder"/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 				fi
 				
 				if [[ "$(diskutil info "$volume_name"|grep "Volume UUID")" == *"${numeric_folder#/Volumes/Preboot/}"* ]]; then
@@ -871,12 +886,8 @@ Patch_Volume_Helpers()
 
 			for numeric_folder in /Volumes/Recovery/*; do
 				if [[ -e "$numeric_folder"/SystemVersion.plist ]]; then
-					recovery_version="$(grep -A1 "ProductVersion" "$numeric_folder"/SystemVersion.plist)"
-
-					recovery_version="${recovery_version#*<string>}"
-					recovery_version="${recovery_version%</string>*}"
-
-					recovery_version_short="${recovery_version:0:5}"
+					recovery_version="$(defaults read "$numeric_folder"/SystemVersion.plist ProductVersion)"
+					recovery_version_short="$(defaults read "$numeric_folder"/SystemVersion.plist ProductVersion | cut -c-5)"
 				fi
 
 				if [[ "$(diskutil info "$volume_name"|grep "Volume UUID")" == *"${numeric_folder#/Volumes/Recovery/}"* ]]; then
@@ -946,6 +957,9 @@ Input_Model
 Input_Volume
 Mount_EFI
 Check_Volume_Version
+Check_Volume_Support
+Check_Volume_dosdude
+Volume_Variables
 Clean_Volume
 Patch_Volume
 Repair_Permissions

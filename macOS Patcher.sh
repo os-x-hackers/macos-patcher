@@ -31,7 +31,7 @@ Parameter_Variables()
 		set -x
 	fi
 	
-	if [[ $parameters == *"-m-pk"* || $parameters == *"-modern-prelinkedkernel"* ]]; then
+	if [[ $parameters == *"-modern-prelinkedkernel"* ]]; then
 		modern_prelinkedkernel="1"
 	fi
 }
@@ -42,27 +42,20 @@ Path_Variables()
 	directory_path="${0%/*}"
 
 	resources_path="$directory_path/resources"
-
-	system_version_path="System/Library/CoreServices/SystemVersion.plist"
-	
-	installer_system_macos="/Volumes/macOS Base System"
-	installer_system_macosx="/Volumes/Mac OS X Base System"
-	installer_system_osx="/Volumes/OS X Base System"
-
-	installer_packages_image="/tmp/Installer Packages"
-	installer_system_image="/tmp/Installer System"
 }
 
 Input_Off()
 {
 	stty -echo
 }
+
 Input_On()
 {
 	stty echo
 }
 
-Output_Off() {
+Output_Off()
+{
 	if [[ $verbose == "1" ]]; then
 		"$@"
 	else
@@ -138,6 +131,7 @@ Input_Operation()
 		Check_Installer_Stucture
 		Check_Installer_Version
 		Check_Installer_Support
+		Installer_Variables
 		Input_Volume
 		Create_Installer
 		Patch_Installer
@@ -153,100 +147,70 @@ Input_Installer()
 {
 	echo ${text_message}"/ What installer would you like to use?"${erase_style}
 	echo ${text_message}"/ Input an installer path."${erase_style}
-
 	Input_On
 	read -e -p "/ " installer_application_path
 	Input_Off
 
-	installer_images_path="$installer_application_path/Contents/SharedSupport"
+	installer_sharedsupport_path="$installer_application_path/Contents/SharedSupport"
 }
 
 Check_Installer_Stucture()
 {
-	Output_Off hdiutil attach "$installer_images_path"/InstallESD.dmg -mountpoint "$installer_packages_image" -nobrowse
+	Output_Off hdiutil attach "$installer_sharedsupport_path"/InstallESD.dmg -mountpoint /tmp/InstallESD -nobrowse
 
 	echo ${text_progress}"> Checking installer structure."${erase_style}
-	if [[ -e "$installer_packages_image"/BaseSystem.dmg ]]; then
-		installer_contents="1"
+	if [[ -e /tmp/InstallESD/BaseSystem.dmg ]]; then
+		installer_images_path="/tmp/InstallESD"
 	fi
-	if [[ -e "$installer_packages_image"/AppleDiagnostics.dmg ]]; then
-		installer_contents="2"
-	fi
-	if [[ -e "$installer_images_path"/BaseSystem.dmg ]]; then
-		installer_contents="3"
+	if [[ -e "$installer_sharedsupport_path"/BaseSystem.dmg ]]; then
+		installer_images_path="$installer_sharedsupport_path"
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Checked installer structure."${erase_style}
 
 	echo ${text_progress}"> Mounting installer disk images."${erase_style}
-	if [[ $installer_contents == "1" || $installer_contents == "2" ]]; then
-		Output_Off hdiutil attach "$installer_packages_image"/BaseSystem.dmg -mountpoint "$installer_system_image" -nobrowse
-	fi
-	if [[ $installer_contents == "3" ]]; then
-		Output_Off hdiutil attach "$installer_images_path"/BaseSystem.dmg -mountpoint "$installer_system_image" -nobrowse
-	fi
+	Output_Off hdiutil attach "$installer_images_path"/BaseSystem.dmg -mountpoint /tmp/Base\ System -nobrowse
 	echo ${move_up}${erase_line}${text_success}"+ Mounted installer disk images."${erase_style}
 }
 
 Check_Installer_Version()
 {
 	echo ${text_progress}"> Checking installer version."${erase_style}	
-	installer_version="$(grep -A1 "ProductVersion" "$installer_system_image/$system_version_path")"
-
-	installer_version="${installer_version#*<string>}"
-	installer_version="${installer_version%</string>*}"
-
-	installer_version_short="${installer_version:0:5}"
+	installer_version="$(defaults read /tmp/Base\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+	installer_version_short="$(defaults read /tmp/Base\ System/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 	echo ${move_up}${erase_line}${text_success}"+ Checked installer version."${erase_style}	
 }
 
 Check_Installer_Support()
 {
 	echo ${text_progress}"> Checking installer support."${erase_style}
-	if [[ $installer_version_short == "10.13" || $installer_version_short == "10.14" ]]; then
-		installer_patch_required="1"
-	fi
-	if [[ $installer_version_short == "10.12" || $installer_version_short == "10.13" ]]; then
-		installer_patch_supported="1"
-	fi
-
-	if [[ $installer_version == "10.12" ]]; then
-		installer_prelinkedkernel="10.12"
-	fi
-	if [[ $installer_version == "10.12.1" || $installer_version == "10.12.2" || $installer_version == "10.12.3" ]]; then
-		installer_prelinkedkernel="10.12.1"
-	fi
-	if [[ $installer_version == "10.12.4" || $installer_version == "10.12.5" || $installer_version == "10.12.6" ]]; then
-		installer_prelinkedkernel="10.12.4"
-	fi
-
-	if [[ $installer_version == "10.13" || $installer_version == "10.13.1" || $installer_version == "10.13.2" || $installer_version == "10.13.3" ]]; then
-		installer_prelinkedkernel="10.13"
-	fi
-	if [[ $installer_version == "10.13.4" || $installer_version == "10.13.5" || $installer_version == "10.13.6" ]]; then
-		installer_prelinkedkernel="10.13.4"
-	fi
-
-	if [[ $installer_version == "10.14" ]]; then
-		installer_prelinkedkernel="10.14"
-		installer_patch_supported="1"
-	fi
-	if [[ $installer_version == "10.14.1" || $installer_version == "10.14.2" || $installer_version == "10.14.3" ]]; then
-		installer_prelinkedkernel="10.14.1"
-		installer_patch_supported="1"
-	fi
-	if [[ $installer_version == "10.14.4" || $installer_version == "10.14.5" ]]; then
-		installer_prelinkedkernel="10.14.4"
-		installer_patch_supported="1"
-	fi
-
-	if [[ $installer_patch_supported == "1" ]]; then
+	if [[ $installer_version_short == "10.1"[2-3] || $installer_version == "10.14."[4-5] ]]; then
 		echo ${move_up}${erase_line}${text_success}"+ Installer support check passed."${erase_style}
-	fi
-	if [[ ! $installer_patch_supported == "1" ]]; then
+	else
 		echo ${text_error}"- Installer support check failed."${erase_style}
 		echo ${text_message}"/ Run this tool with a supported installer."${erase_style}
 		Input_On
 		exit
+	fi
+}
+
+Installer_Variables()
+{
+	if [[ $modern_prelinkedkernel == "1" && $modern_prelinkedkernel_check == "1" ]]; then
+		installer_prelinkedkernel_path="$resources_path/prelinkedkernel-modern"
+	else
+		installer_prelinkedkernel_path="$resources_path/prelinkedkernel"
+	fi
+
+	if [[ $installer_version_short == "10.1"[2-4] || $installer_version == "10.13."[1-3] ]]; then
+		installer_prelinkedkernel="$installer_version_short"
+	fi
+
+	if [[ $installer_version == "10.12."[1-3] || $installer_version == "10.14."[1-3] ]]; then
+		installer_prelinkedkernel="$installer_version_short.1"
+	fi
+
+	if [[ $installer_version == "10.12."[4-6] || $installer_version == "10.13."[4-6] || $installer_version == "10.14."[4-5] ]]; then
+		installer_prelinkedkernel="$installer_version_short.4"
 	fi
 }
 
@@ -270,61 +234,45 @@ Input_Volume()
 Create_Installer()
 {
 	echo ${text_progress}"> Restoring installer disk image."${erase_style}
-	if [[ $installer_contents == "1" || $installer_contents == "2" ]]; then
-		Output_Off asr restore -source "$installer_packages_image"/BaseSystem.dmg -target "$installer_volume_path" -noprompt -noverify -erase
-	fi
-	if [[ $installer_contents == "3" ]]; then
-		Output_Off asr restore -source "$installer_images_path"/BaseSystem.dmg -target "$installer_volume_path" -noprompt -noverify -erase
-	fi
-	sleep 1
+	Output_Off asr restore -source "$installer_images_path"/BaseSystem.dmg -target "$installer_volume_path" -noprompt -noverify -erase
 	echo ${move_up}${erase_line}${text_success}"+ Restored installer disk image."${erase_style}
 
 	echo ${text_progress}"> Renaming installer volume."${erase_style}
-	if [[ -d "$installer_system_macosx" ]]; then
-		Output_Off diskutil rename "$installer_system_macosx" "$installer_volume_name"
-	fi
-	if [[ -d "$installer_system_osx" ]]; then
-		Output_Off diskutil rename "$installer_system_osx" "$installer_volume_name"
-	fi
-	if [[ -d "$installer_system_macos" ]]; then
-		Output_Off diskutil rename "$installer_system_macos" "$installer_volume_name"
-	fi
-		bless --folder "$installer_volume_path"/System/Library/CoreServices --label "$installer_volume_name"
+	Output_Off diskutil rename /Volumes/*Base\ System "$installer_volume_name"
+	bless --folder "$installer_volume_path"/System/Library/CoreServices --label "$installer_volume_name"
 	echo ${move_up}${erase_line}${text_success}"+ Renamed installer volume."${erase_style}
 
 	echo ${text_progress}"> Copying installer packages."${erase_style}
 	rm "$installer_volume_path"/System/Installation/Packages
-	cp -R "$installer_packages_image"/Packages "$installer_volume_path"/System/Installation/
+	cp -R /tmp/InstallESD/Packages "$installer_volume_path"/System/Installation/
 	echo ${move_up}${erase_line}${text_success}"+ Copied installer packages."${erase_style}
 
 	echo ${text_progress}"> Copying installer disk images."${erase_style}
-	if [[ $installer_contents == "1" || $installer_contents == "2" ]]; then
-		cp "$installer_packages_image"/BaseSystem* "$installer_volume_path"/
-	fi
-	if [[ $installer_contents == "2" ]]; then
-		cp "$installer_packages_image"/AppleDiagnostics* "$installer_volume_path"/
-	fi
-	if [[ $installer_contents == "3" ]]; then
-		cp "$installer_images_path"/BaseSystem* "$installer_volume_path"/
-		cp "$installer_images_path"/AppleDiagnostics* "$installer_volume_path"/
+	cp "$installer_images_path"/BaseSystem.dmg "$installer_volume_path"/
+	cp "$installer_images_path"/BaseSystem.chunklist "$installer_volume_path"/
+
+	if [[ -e "$installer_images_path"/AppleDiagnostics.dmg ]]; then
+		cp "$installer_images_path"/AppleDiagnostics.dmg "$installer_volume_path"/
+		cp "$installer_images_path"/AppleDiagnostics.chunklist "$installer_volume_path"/
 	fi
 	echo ${move_up}${erase_line}${text_success}"+ Copied installer disk images."${erase_style}
 
 	echo ${text_progress}"> Unmounting installer disk images."${erase_style}
-	Output_Off hdiutil detach "$installer_packages_image"
-	Output_Off hdiutil detach "$installer_system_image"
+	Output_Off hdiutil detach /tmp/InstallESD
+	Output_Off hdiutil detach /tmp/Base\ System
 	echo ${move_up}${erase_line}${text_success}"+ Unmounted installer disk images."${erase_style}
+
+	echo ${text_progress}"> Replacing installer utilities menu."${erase_style}
+	cp "$resources_path"/InstallerMenuAdditions.plist "$installer_volume_path"/System/Installation/CDIS/*Installer.app/Contents/Resources
+	echo ${move_up}${erase_line}${text_success}"+ Replacing installer utilities menu."${erase_style}
 }
 
 Patch_Installer()
 {
-	echo ${text_progress}"> Patching installer menu."${erase_style}
-	cp "$resources_path"/menu/"$installer_version_short"/InstallerMenuAdditions.plist "$installer_volume_path"/System/Installation/CDIS/*Installer.app/Contents/Resources
-	echo ${move_up}${erase_line}${text_success}"+ Patched installer menu."${erase_style}
-
-	if [[ $installer_patch_required == "1" ]]; then
+	if [[ $installer_version_short == "10.1"[3-4] ]]; then
 		Patch_Supported
 	fi
+
 	Patch_Unsupported
 }
 
@@ -394,11 +342,7 @@ Patch_Unsupported()
 
 	echo ${text_progress}"> Patching kernel cache."${erase_style}
 	rm "$installer_volume_path"/System/Library/PrelinkedKernels/prelinkedkernel
-	if [[ $modern_prelinkedkernel == "1" && $modern_prelinkedkernel_check == "1" ]]; then
-		cp "$resources_path"/prelinkedkernel-modern/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
-	else
-		cp "$resources_path"/prelinkedkernel/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
-	fi
+	cp "$installer_prelinkedkernel_path"/"$installer_prelinkedkernel"/prelinkedkernel "$installer_volume_path"/System/Library/PrelinkedKernels
 	chflags uchg "$installer_volume_path"/System/Library/PrelinkedKernels/prelinkedkernel
 	echo ${move_up}${erase_line}${text_success}"+ Patched kernel cache."${erase_style}
 

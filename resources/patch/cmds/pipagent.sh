@@ -4,25 +4,17 @@ pip_config="$(nvram -p|grep pipconfig)"
 
 Check_Version()
 {
-	volume_version="$(grep -A1 "ProductVersion" /System/Library/CoreServices/SystemVersion.plist)"
-	volume_build="$(grep -A1 "ProductBuildVersion" /System/Library/CoreServices/SystemVersion.plist)"
+	volume_version="$(defaults read /System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+	volume_version_short="$(defaults read /System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 
-	volume_version="${volume_version#*<string>}"
-	volume_version="${volume_version%</string>*}"
-	volume_build="${volume_build#*<string>}"
-	volume_build="${volume_build%</string>*}"
+	volume_build="$(defaults read /System/Library/CoreServices/SystemVersion.plist ProductBuildVersion)"
 
-	volume_version_short="${volume_version:0:5}"
+	if [[ -e "$volume_path"/System/Library/CoreServices/SystemVersion-pip.plist ]]; then
+		volume_version_pip="$(defaults read /System/Library/CoreServices/SystemVersion-pip.plist ProductVersion)"
+		volume_version_pip_short="$(defaults read /System/Library/CoreServices/SystemVersion-pip.plist ProductVersion | cut -c-5)"
 
-	volume_version_pip="$(grep -A1 "ProductVersion" /System/Library/CoreServices/SystemVersion-pip.plist)"
-	volume_build_pip="$(grep -A1 "ProductBuildVersion" /System/Library/CoreServices/SystemVersion-pip.plist)"
-
-	volume_version_pip="${volume_version_pip#*<string>}"
-	volume_version_pip="${volume_version_pip%</string>*}"
-	volume_build_pip="${volume_build_pip#*<string>}"
-	volume_build_pip="${volume_build_pip%</string>*}"
-
-	volume_version_pip_short="${volume_version:0:5}"
+		volume_build_pip="$(defaults read /System/Library/CoreServices/SystemVersion-pip.plist ProductBuildVersion)"
+	fi
 
 	if [[ ! $volume_version == $volume_version_pip ]]; then
 		volume_versions_differ="1"
