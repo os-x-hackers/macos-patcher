@@ -36,20 +36,20 @@ Path_Variables()
 {
 	script_path="${0}"
 	directory_path="${0%/*}"
-
-	system_version_path="System/Library/CoreServices/SystemVersion.plist"
 }
 
 Input_Off()
 {
 	stty -echo
 }
+
 Input_On()
 {
 	stty echo
 }
 
-Output_Off() {
+Output_Off()
+{
 	if [[ $verbose == "1" ]]; then
 		"$@"
 	else
@@ -147,30 +147,28 @@ Input_Volume()
 Check_Volume_Version()
 {
 	echo ${text_progress}"> Checking system version."${erase_style}	
-	volume_version="$(grep -A1 "ProductVersion" "$volume_path/$system_version_path")"
+	volume_version="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion)"
+	volume_version_short="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductVersion | cut -c-5)"
 
-	volume_version="${volume_version#*<string>}"
-	volume_version="${volume_version%</string>*}"
-
-	volume_version_short="${volume_version:0:5}"
-	volume_version_underscore="${volume_version//./_}"
+	volume_build="$(defaults read "$volume_path"/System/Library/CoreServices/SystemVersion.plist ProductBuildVersion)"
 	echo ${move_up}${erase_line}${text_success}"+ Checked system version."${erase_style}
+}
 
+Check_Volume_Support()
+{
 	echo ${text_progress}"> Checking system support."${erase_style}
-	if [[ $volume_version_short == "10.12" || $volume_version_short == "10.13" || $volume_version_short == "10.14" ]]; then
-		volume_patch_supported="1"
-	fi
-
-	if [[ $volume_patch_supported == "1" ]]; then
+	if [[ $volume_version_short == "10.1"[2-4] ]]; then
 		echo ${move_up}${erase_line}${text_success}"+ System support check passed."${erase_style}
-	fi
-	if [[ ! $volume_patch_supported == "1" ]]; then
+	else
 		echo ${text_error}"- System support check failed."${erase_style}
 		echo ${text_message}"/ Run this tool on a supported system."${erase_style}
 		Input_On
 		exit
 	fi
+}
 
+Volume_Variables()
+{
 	if [[ -e "$volume_path"/System/Library/PrivateFrameworks/CoreUI.framework/Versions/Current/CoreUI-bak ]]; then
 		volume_patch_hybrid_mode="1"
 	fi
@@ -381,6 +379,8 @@ Check_SIP
 Check_Internet
 Input_Volume
 Check_Volume_Version
+Check_Volume_Support
+Volume_Variables
 Import_Variables
 Input_Operation
 Repair_Permissions
